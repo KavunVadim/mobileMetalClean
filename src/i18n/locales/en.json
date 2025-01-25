@@ -1,0 +1,53 @@
+{
+  "header": {
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "services": {
+    "title": "Our Services",
+    "description": "Professional laser cleaning services for all types of surfaces",
+    "list": {
+      "metalSurfaces": {
+        "title": "Metal Surface Laser Cleaning",
+        "description": "Fast and effective removal of rust, paint, oxides, and dirt from metal structures. Preserves the original texture of the material."
+      },
+      "facadeRestoration": {
+        "title": "Building Facade Restoration",
+        "description": "Cleaning facades from graffiti, dirt, mold, and old paint layers. Preserving the aesthetics and historical value of the building."
+      },
+      "yachtCleaning": {
+        "title": "Yacht and Vessel Cleaning",
+        "description": "Removal of algae, old coatings, and contaminants from yacht and vessel hulls. Preparation for painting or corrosion protection."
+      },
+      "sculptureRestoration": {
+        "title": "Sculpture and Monument Restoration",
+        "description": "Delicate cleaning of historical monuments and sculptures from contamination, graffiti, or mold. Complete preservation of structure and texture."
+      },
+      "equipmentPreparation": {
+        "title": "Equipment Cleaning and Preparation",
+        "description": "Laser removal of old coatings from vehicles, agricultural machinery, or construction equipment. Preparation for further protection or painting."
+      },
+      "graffitiRemoval": {
+        "title": "Eco-friendly Graffiti Removal",
+        "description": "Safe and quick removal of graffiti from facades, windows, sculptures, or other objects. No damage to the material."
+      },
+      "scaleRemoval": {
+        "title": "Scale and Oil Contamination Removal",
+        "description": "Cleaning industrial pipes, tanks, and equipment from scale, oils, and other contaminants. Improving equipment efficiency."
+      },
+      "postTreatment": {
+        "title": "Post-cleaning Treatment",
+        "description": "Application of primer and paint after cleaning for long-lasting protection and aesthetic appearance."
+      },
+      "shutterRestoration": {
+        "title": "Shutter Cleaning and Restoration",
+        "description": "Cleaning shutters from graffiti, dirt, and old paint. Restoration of damaged surfaces and new paint application to restore aesthetics."
+      },
+      "maintenance": {
+        "title": "Regular Maintenance",
+        "description": "We offer continuous cleaning and surface treatment to maintain their perfect condition."
+      }
+    }
+  }
+}

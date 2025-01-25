@@ -1,0 +1,53 @@
+{
+  "header": {
+    "services": "Servicios",
+    "portfolio": "Portafolio",
+    "contact": "Contacto"
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "description": "Servicios profesionales de limpieza láser para todo tipo de superficies",
+    "list": {
+      "metalSurfaces": {
+        "title": "Limpieza Láser de Superficies Metálicas",
+        "description": "Eliminación rápida y efectiva de óxido, pintura, óxidos y suciedad de estructuras metálicas. Preserva la textura original del material."
+      },
+      "facadeRestoration": {
+        "title": "Restauración de Fachadas",
+        "description": "Limpieza de fachadas de grafitis, suciedad, moho y capas antiguas de pintura. Preservación de la estética y el valor histórico del edificio."
+      },
+      "yachtCleaning": {
+        "title": "Limpieza de Yates y Embarcaciones",
+        "description": "Eliminación de algas, revestimientos antiguos y contaminantes del casco de yates y embarcaciones. Preparación para pintura o protección contra la corrosión."
+      },
+      "sculptureRestoration": {
+        "title": "Restauración de Esculturas y Monumentos",
+        "description": "Limpieza delicada de monumentos históricos y esculturas de contaminación, grafitis o moho. Preservación completa de la estructura y textura."
+      },
+      "equipmentPreparation": {
+        "title": "Limpieza y Preparación de Equipos",
+        "description": "Eliminación láser de revestimientos antiguos de vehículos, maquinaria agrícola o equipos de construcción. Preparación para protección o pintura posterior."
+      },
+      "graffitiRemoval": {
+        "title": "Eliminación Ecológica de Grafitis",
+        "description": "Eliminación segura y rápida de grafitis de fachadas, ventanas, esculturas u otros objetos. Sin daños al material."
+      },
+      "scaleRemoval": {
+        "title": "Eliminación de Incrustaciones y Contaminación por Aceite",
+        "description": "Limpieza de tuberías industriales, tanques y equipos de incrustaciones, aceites y otros contaminantes. Mejora de la eficiencia del equipo."
+      },
+      "postTreatment": {
+        "title": "Tratamiento Posterior a la Limpieza",
+        "description": "Aplicación de imprimación y pintura después de la limpieza para una protección duradera y apariencia estética."
+      },
+      "shutterRestoration": {
+        "title": "Limpieza y Restauración de Persianas",
+        "description": "Limpieza de persianas de grafitis, suciedad y pintura antigua. Restauración de superficies dañadas y aplicación de nueva pintura para restaurar la estética."
+      },
+      "maintenance": {
+        "title": "Mantenimiento Regular",
+        "description": "Ofrecemos limpieza y tratamiento continuo de superficies para mantener su condición perfecta."
+      }
+    }
+  }
+}
