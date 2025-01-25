@@ -98,7 +98,7 @@ export default function Contact() {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-black opacity-50" />
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093747!2d144.9537353153166!3d-37.816279742021665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d2aabc5e2f1a!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1625070000000!5m2!1sen!2sus"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4772804.990531765!2d-8.091836327753134!3d37.92728385898983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc42e3783261bc8b%3A0xa6ec2c940768a3ec!2z0IbRgdC_0LDQvdGW0Y8!5e0!3m2!1suk!2sua!4v1737834890179!5m2!1suk!2sua"
           width="100%"
           height="100%"
           className="border-0"
