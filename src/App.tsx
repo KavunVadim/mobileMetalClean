@@ -1,19 +1,33 @@
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import Portfolio from './components/Portfolio';
-import Contact from './components/Contact';
-import About from './components/About';
+import { Suspense, lazy } from 'react';
+
+const Header = lazy(() => import('./components/Header'));
+const Hero = lazy(() => import('./components/Hero'));
+const Services = lazy(() => import('./components/Services'));
+const Portfolio = lazy(() => import('./components/Portfolio'));
+const Contact = lazy(() => import('./components/Contact'));
+const About = lazy(() => import('./components/About'));
+
+function LoadingSpinner() {
+  return (
+    <div className="flex items-center justify-center h-screen">
+      <div className="animate-pulse rounded-full bg-gray-700">
+        <img src="./images/logo.webp" alt="logo" width={400} height={400} />
+      </div>
+    </div>
+  );
+}
 
 function App() {
   return (
     <div className="bg-gray-900">
-      <Header />
-      <Hero />
-      <About />
-      <Services />
-      <Portfolio />
-      <Contact />
+      <Suspense fallback={<LoadingSpinner />}>
+        <Header />
+        <Hero />
+        <About />
+        <Services />
+        <Portfolio />
+        <Contact />
+      </Suspense>
     </div>
   );
 }

@@ -14,8 +14,8 @@ export default function Portfolio() {
       id: 1,
       title: t('portfolio.items.project1.title'),
       description: t('portfolio.items.project1.description'),
-      before: '/images/services/item-before.webp',
-      after: '/images/services/item-after.webp',
+      before: '/images/portfolio/item-before.webp',
+      after: '/images/portfolio/item-after.webp',
       category: t('portfolio.items.project1.category'),
     },
     {

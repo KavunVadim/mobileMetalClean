@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { t } from 'i18next';
+
 import {
   Zap,
   Building,
@@ -24,73 +24,64 @@ export default function Services() {
       icon: Zap,
       title: t('services.zap.title'),
       description: t('services.zap.description'),
-      beforeImage: '/images/services/item-before.webp',
-      afterImage: '/images/services/item-after.webp',
+      videoSrc: '/videos/services/zap.webm', // Add video path
     },
     {
       icon: Building,
       title: t('services.building.title'),
       description: t('services.building.description'),
-      beforeImage: '/images/facade-before.jpg',
-      afterImage: '/images/facade-after.jpg',
+      videoSrc: '/videos/services/building.webm', // Add video path
     },
     {
       icon: Ship,
       title: t('services.ship.title'),
       description: t('services.ship.description'),
-      beforeImage: '/images/yacht-before.jpg',
-      afterImage: '/images/yacht-after.jpg',
+      videoSrc: '/videos/services/ship.webm', // Add video path
     },
     {
       icon: Landmark,
       title: t('services.landmark.title'),
       description: t('services.landmark.description'),
-      beforeImage: '/images/sculpture-before.jpg',
-      afterImage: '/images/sculpture-after.jpg',
+      videoSrc: '/videos/services/landmark.webm', // Add video path
     },
     {
       icon: Truck,
       title: t('services.truck.title'),
       description: t('services.truck.description'),
-      beforeImage: '/images/vehicle-before.jpg',
-      afterImage: '/images/vehicle-after.jpg',
+      videoSrc: '/videos/vehicle-video.mp4', // Add video path
     },
     {
       icon: Spray,
       title: t('services.spray.title'),
       description: t('services.spray.description'),
-      beforeImage: '/images/graffiti-before.jpg',
-      afterImage: '/images/graffiti-after.jpg',
+      videoSrc: '/videos/graffiti-video.mp4', // Add video path
     },
     {
       icon: Industry,
       title: t('services.industry.title'),
       description: t('services.industry.description'),
-      beforeImage: '/images/industrial-before.jpg',
-      afterImage: '/images/industrial-after.jpg',
+      videoSrc: '/videos/industrial-video.mp4', // Add video path
     },
     {
       icon: PaintBucket,
       title: t('services.paintBucket.title'),
       description: t('services.paintBucket.description'),
-      beforeImage: '/images/painting-before.jpg',
-      afterImage: '/images/painting-after.jpg',
+      videoSrc: '/videos/painting-video.mp4', // Add video path
     },
     {
       icon: Blinds,
       title: t('services.blinds.title'),
       description: t('services.blinds.description'),
-      beforeImage: '/images/shutters-before.jpg',
-      afterImage: '/images/shutters-after.jpg',
+      videoSrc: '/videos/shutters-video.mp4', // Add video path
     },
     {
       icon: Clock,
       title: t('services.clock.title'),
       description: t('services.clock.description'),
-      beforeImage: '/images/maintenance-before.jpg',
-      afterImage: '/images/maintenance-after.jpg',
+      videoSrc: '/videos/maintenance-video.mp4', // Add video path
     },
   ];
+
   return (
     <section id="services" className="py-20 bg-gray-900">
       <div className="container mx-auto px-4">
@@ -112,15 +103,14 @@ export default function Services() {
               className="bg-gray-800 rounded-lg overflow-hidden shadow-lg group"
             >
               <div className="relative h-48 overflow-hidden">
-                <img
-                  src={service.beforeImage}
-                  alt={`Before - ${service.title}`}
-                  className="absolute inset-0 w-full h-full object-cover z-10 group-hover:opacity-0 transition-opacity duration-300"
-                />
-                <img
-                  src={service.afterImage}
-                  alt={`After - ${service.title}`}
-                  className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                <video
+                  playsInline
+                  autoPlay
+                  src={service.videoSrc} // Set video source
+                  alt={`${t('services.title')} - ${service.title}`}
+                  className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300"
+                  loop
+                  muted
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center z-20">
                   <service.icon className="w-16 h-16 text-blue-500" />
