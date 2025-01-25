@@ -1,53 +1,132 @@
 {
   "header": {
+    "home": "Home",
+    "about": "About",
     "services": "Services",
     "portfolio": "Portfolio",
     "contact": "Contact"
   },
+  "hero": {
+    "title": "Perfect Metal Cleaning",
+    "subtitle": "No Disassembly Required",
+    "description": "Fast, effective, and eco-friendly laser cleaning for all metal surfaces",
+    "button": "Order Service"
+  },
+  "about": {
+    "title": "About Our Service",
+    "benefits": [
+      {
+        "title": "Mobile Service",
+        "description": "We come to you, no need for disassembly or transport."
+      },
+      {
+        "title": "Efficient Cleaning",
+        "description": "Our laser technology provides fast and thorough cleaning for all types of metal surfaces."
+      },
+      {
+        "title": "Eco-Friendly",
+        "description": "No chemicals used, minimal waste produced during the process."
+      },
+      {
+        "title": "Marine Expertise",
+        "description": "Specialized in cleaning boats and marine equipment."
+      }
+    ],
+    "applications": {
+      "title": "Areas of Application",
+      "description": "Our laser cleaning technology is suitable for a wide range of applications, including marine and nautical equipment:",
+      "items": [
+        "Residential: Fences, gates, and metal structures",
+        "Commercial: Industrial equipment and machinery",
+        "Cultural sites: Monuments and historical metal artifacts",
+        "Marine: Boats, yachts, and maritime equipment",
+        "Nautical: Anchors, propellers, and other boat parts",
+        "Docks and Marinas: Metal structures exposed to saltwater"
+      ]
+    },
+    "marineCleaning": {
+      "title": "Marine Laser Cleaning",
+      "description": "Our specialized laser cleaning service is perfect for the marine industry. We can effectively remove rust, barnacles, and other contaminants from boats, yachts, and various maritime equipment. Our process is gentle on the underlying material, making it ideal for preserving the integrity of your valuable marine assets while restoring their appearance and functionality."
+    }
+  },
   "services": {
     "title": "Our Services",
-    "description": "Professional laser cleaning services for all types of surfaces",
-    "list": {
-      "metalSurfaces": {
-        "title": "Metal Surface Laser Cleaning",
-        "description": "Fast and effective removal of rust, paint, oxides, and dirt from metal structures. Preserves the original texture of the material."
+    "zap": {
+      "title": "Laser cleaning of metal surfaces",
+      "description": "Fast and efficient removal of rust, paint, oxides, and dirt from metal structures while preserving the original texture of the material."
+    },
+    "building": {
+      "title": "Facade restoration of buildings",
+      "description": "Cleaning facades from graffiti, dirt, mold, and old paint layers while preserving the aesthetics and historical value of the building."
+    },
+    "ship": {
+      "title": "Cleaning of yachts and vessels",
+      "description": "Removal of algae, old coatings, and dirt from the hulls of yachts and vessels. Preparation for painting or corrosion protection."
+    },
+    "landmark": {
+      "title": "Restoration of sculptures and monuments",
+      "description": "Delicate cleaning of historical monuments and sculptures from dirt, graffiti, or mold while fully preserving their structure and texture."
+    },
+    "truck": {
+      "title": "Cleaning and preparation of equipment for priming and painting",
+      "description": "Laser removal of old coatings from cars, agricultural machinery, or construction machines. Preparation for further protection or painting."
+    },
+    "spray": {
+      "title": "Eco-friendly graffiti removal",
+      "description": "Safe and quick removal of graffiti from facades, shop windows, sculptures, or other objects without damaging the material."
+    },
+    "industry": {
+      "title": "Removal of scale and oil contamination",
+      "description": "Cleaning industrial pipes, tanks, and equipment from scale, oils, and other contaminants. Improving equipment efficiency."
+    },
+    "paintBucket": {
+      "title": "Post-cleaning treatment: priming and painting",
+      "description": "Application of primer and paint after cleaning for long-lasting protection and aesthetic appearance."
+    },
+    "blinds": {
+      "title": "Cleaning, restoration, and painting of shutters",
+      "description": "Cleaning shutters from graffiti, dirt, and old paint. Restoration of damaged surfaces and application of new paint to restore aesthetics."
+    },
+    "clock": {
+      "title": "Regular maintenance of objects",
+      "description": "Offering continuous cleaning and surface treatment to maintain their perfect condition."
+    }
+  },
+  "portfolio": {
+    "title": "Our Portfolio",
+    "before": "Before",
+    "after": "After",
+    "items": {
+      "project1": {
+        "title": "Restoration of Rusty Gates",
+        "description": "Complete restoration of heavily rusted iron gates, returning them to their original appearance.",
+        "category": "restoration"
       },
-      "facadeRestoration": {
-        "title": "Building Facade Restoration",
-        "description": "Cleaning facades from graffiti, dirt, mold, and old paint layers. Preserving the aesthetics and historical value of the building."
+      "project2": {
+        "title": "Yacht Hull Cleaning",
+        "description": "Removal of algae and marine growth from the hull of a luxury yacht, improving its performance and appearance.",
+        "category": "maintenance"
       },
-      "yachtCleaning": {
-        "title": "Yacht and Vessel Cleaning",
-        "description": "Removal of algae, old coatings, and contaminants from yacht and vessel hulls. Preparation for painting or corrosion protection."
+      "project3": {
+        "title": "Industrial Equipment Maintenance",
+        "description": "Precise cleaning of sensitive industrial equipment, extending its service life and efficiency.",
+        "category": "maintenance"
       },
-      "sculptureRestoration": {
-        "title": "Sculpture and Monument Restoration",
-        "description": "Delicate cleaning of historical monuments and sculptures from contamination, graffiti, or mold. Complete preservation of structure and texture."
-      },
-      "equipmentPreparation": {
-        "title": "Equipment Cleaning and Preparation",
-        "description": "Laser removal of old coatings from vehicles, agricultural machinery, or construction equipment. Preparation for further protection or painting."
-      },
-      "graffitiRemoval": {
-        "title": "Eco-friendly Graffiti Removal",
-        "description": "Safe and quick removal of graffiti from facades, windows, sculptures, or other objects. No damage to the material."
-      },
-      "scaleRemoval": {
-        "title": "Scale and Oil Contamination Removal",
-        "description": "Cleaning industrial pipes, tanks, and equipment from scale, oils, and other contaminants. Improving equipment efficiency."
-      },
-      "postTreatment": {
-        "title": "Post-cleaning Treatment",
-        "description": "Application of primer and paint after cleaning for long-lasting protection and aesthetic appearance."
-      },
-      "shutterRestoration": {
-        "title": "Shutter Cleaning and Restoration",
-        "description": "Cleaning shutters from graffiti, dirt, and old paint. Restoration of damaged surfaces and new paint application to restore aesthetics."
-      },
-      "maintenance": {
-        "title": "Regular Maintenance",
-        "description": "We offer continuous cleaning and surface treatment to maintain their perfect condition."
+      "project4": {
+        "title": "Preservation of a Historical Monument",
+        "description": "Delicate cleaning of a bronze statue, preserving its historical integrity while restoring its appearance.",
+        "category": "restoration"
       }
     }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "callUs": "Call Us",
+    "email": "Email",
+    "serviceArea": "Service Area",
+    "chatTitle": "Quick Chat",
+    "chatWhatsApp": "Chat on WhatsApp",
+    "chatTelegram": "Message on Telegram",
+    "chatEmail": "Email Us"
   }
 }

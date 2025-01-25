@@ -1,53 +1,134 @@
 {
   "header": {
+    "home": "Inicio",
+    "about": "Acerca de",
     "services": "Servicios",
     "portfolio": "Portafolio",
     "contact": "Contacto"
   },
+  "hero": {
+    "title": "Limpieza Perfecta de Metales",
+    "subtitle": "Sin Desmontaje Requerido",
+    "description": "Limpieza láser rápida, efectiva y ecológica para todas las superficies metálicas",
+    "button": "Solicitar Servicio"
+  },
+
+  "about": {
+    "title": "Sobre Nuestro Servicio",
+    "benefits": [
+      {
+        "title": "Servicio Móvil",
+        "description": "Vamos a ti, no es necesario desmontar o transportar."
+      },
+      {
+        "title": "Limpieza Eficiente",
+        "description": "Nuestra tecnología láser proporciona una limpieza rápida y profunda para todo tipo de superficies metálicas."
+      },
+      {
+        "title": "Ecológico",
+        "description": "No se utilizan productos químicos y se produce un mínimo de residuos durante el proceso."
+      },
+      {
+        "title": "Experiencia Marina",
+        "description": "Especializados en la limpieza de barcos y equipos marinos."
+      }
+    ],
+    "applications": {
+      "title": "Áreas de Aplicación",
+      "description": "Nuestra tecnología de limpieza láser es adecuada para una amplia gama de aplicaciones, incluyendo equipos marinos y náuticos:",
+      "items": [
+        "Residencial: Vallas, puertas y estructuras metálicas",
+        "Comercial: Equipos industriales y maquinaria",
+        "Sitios culturales: Monumentos y artefactos metálicos históricos",
+        "Marino: Barcos, yates y equipos marítimos",
+        "Náutico: Anclas, hélices y otras partes de barcos",
+        "Muelles y marinas: Estructuras metálicas expuestas al agua salada"
+      ]
+    },
+    "marineCleaning": {
+      "title": "Limpieza Láser Marina",
+      "description": "Nuestro servicio especializado de limpieza láser es perfecto para la industria marina. Podemos eliminar eficazmente el óxido, los percebes y otros contaminantes de barcos, yates y diversos equipos marítimos. Nuestro proceso es suave con el material subyacente, lo que lo hace ideal para preservar la integridad de sus valiosos activos marinos mientras restaura su apariencia y funcionalidad."
+    }
+  },
+
   "services": {
     "title": "Nuestros Servicios",
-    "description": "Servicios profesionales de limpieza láser para todo tipo de superficies",
-    "list": {
-      "metalSurfaces": {
-        "title": "Limpieza Láser de Superficies Metálicas",
-        "description": "Eliminación rápida y efectiva de óxido, pintura, óxidos y suciedad de estructuras metálicas. Preserva la textura original del material."
+    "zap": {
+      "title": "Limpieza láser de superficies metálicas",
+      "description": "Eliminación rápida y eficiente de óxido, pintura, óxidos y suciedad de estructuras metálicas, preservando la textura original del material."
+    },
+    "building": {
+      "title": "Restauración de fachadas de edificios",
+      "description": "Limpieza de fachadas de grafitis, suciedad, moho y capas de pintura vieja, preservando la estética y el valor histórico del edificio."
+    },
+    "ship": {
+      "title": "Limpieza de yates y embarcaciones",
+      "description": "Eliminación de algas, recubrimientos antiguos y suciedad de los cascos de yates y embarcaciones. Preparación para pintura o protección contra la corrosión."
+    },
+    "landmark": {
+      "title": "Restauración de esculturas y monumentos",
+      "description": "Limpieza delicada de monumentos históricos y esculturas de suciedad, grafitis o moho, preservando completamente su estructura y textura."
+    },
+    "truck": {
+      "title": "Limpieza y preparación de equipos para imprimación y pintura",
+      "description": "Eliminación láser de recubrimientos antiguos de automóviles, maquinaria agrícola o equipos de construcción. Preparación para protección adicional o pintura."
+    },
+    "spray": {
+      "title": "Eliminación ecológica de grafitis",
+      "description": "Eliminación segura y rápida de grafitis de fachadas, escaparates, esculturas u otros objetos sin dañar el material."
+    },
+    "industry": {
+      "title": "Eliminación de incrustaciones y contaminación por aceite",
+      "description": "Limpieza de tuberías industriales, tanques y equipos de incrustaciones, aceites y otros contaminantes. Mejora de la eficiencia del equipo."
+    },
+    "paintBucket": {
+      "title": "Tratamiento posterior a la limpieza: imprimación y pintura",
+      "description": "Aplicación de imprimación y pintura después de la limpieza para una protección duradera y un aspecto estético."
+    },
+    "blinds": {
+      "title": "Limpieza, restauración y pintura de persianas",
+      "description": "Limpieza de persianas de grafitis, suciedad y pintura vieja. Restauración de superficies dañadas y aplicación de nueva pintura para recuperar la estética."
+    },
+    "clock": {
+      "title": "Mantenimiento regular de objetos",
+      "description": "Ofrecemos limpieza continua y tratamiento de superficies para mantenerlas en perfecto estado."
+    }
+  },
+  "portfolio": {
+    "title": "Nuestro Portafolio",
+    "before": "Antes",
+    "after": "Después",
+    "items": {
+      "project1": {
+        "title": "Restauración de Portones Oxidados",
+        "description": "Restauración completa de portones de hierro muy oxidados, devolviéndolos a su apariencia original.",
+        "category": "restauración"
       },
-      "facadeRestoration": {
-        "title": "Restauración de Fachadas",
-        "description": "Limpieza de fachadas de grafitis, suciedad, moho y capas antiguas de pintura. Preservación de la estética y el valor histórico del edificio."
+      "project2": {
+        "title": "Limpieza del Casco de un Yate",
+        "description": "Eliminación de algas y acumulaciones marinas del casco de un yate de lujo, mejorando su rendimiento y apariencia.",
+        "category": "mantenimiento"
       },
-      "yachtCleaning": {
-        "title": "Limpieza de Yates y Embarcaciones",
-        "description": "Eliminación de algas, revestimientos antiguos y contaminantes del casco de yates y embarcaciones. Preparación para pintura o protección contra la corrosión."
+      "project3": {
+        "title": "Mantenimiento de Equipos Industriales",
+        "description": "Limpieza precisa de equipos industriales sensibles, extendiendo su vida útil y eficiencia.",
+        "category": "mantenimiento"
       },
-      "sculptureRestoration": {
-        "title": "Restauración de Esculturas y Monumentos",
-        "description": "Limpieza delicada de monumentos históricos y esculturas de contaminación, grafitis o moho. Preservación completa de la estructura y textura."
-      },
-      "equipmentPreparation": {
-        "title": "Limpieza y Preparación de Equipos",
-        "description": "Eliminación láser de revestimientos antiguos de vehículos, maquinaria agrícola o equipos de construcción. Preparación para protección o pintura posterior."
-      },
-      "graffitiRemoval": {
-        "title": "Eliminación Ecológica de Grafitis",
-        "description": "Eliminación segura y rápida de grafitis de fachadas, ventanas, esculturas u otros objetos. Sin daños al material."
-      },
-      "scaleRemoval": {
-        "title": "Eliminación de Incrustaciones y Contaminación por Aceite",
-        "description": "Limpieza de tuberías industriales, tanques y equipos de incrustaciones, aceites y otros contaminantes. Mejora de la eficiencia del equipo."
-      },
-      "postTreatment": {
-        "title": "Tratamiento Posterior a la Limpieza",
-        "description": "Aplicación de imprimación y pintura después de la limpieza para una protección duradera y apariencia estética."
-      },
-      "shutterRestoration": {
-        "title": "Limpieza y Restauración de Persianas",
-        "description": "Limpieza de persianas de grafitis, suciedad y pintura antigua. Restauración de superficies dañadas y aplicación de nueva pintura para restaurar la estética."
-      },
-      "maintenance": {
-        "title": "Mantenimiento Regular",
-        "description": "Ofrecemos limpieza y tratamiento continuo de superficies para mantener su condición perfecta."
+      "project4": {
+        "title": "Preservación de un Monumento Histórico",
+        "description": "Limpieza delicada de una estatua de bronce, preservando su integridad histórica mientras se restaura su apariencia.",
+        "category": "restauración"
       }
     }
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "callUs": "Llámanos",
+    "email": "Correo Electrónico",
+    "serviceArea": "Área de Servicio",
+    "chatTitle": "Chat Rápido",
+    "chatWhatsApp": "Chatea en WhatsApp",
+    "chatTelegram": "Mensaje en Telegram",
+    "chatEmail": "Envíanos un correo"
   }
 }

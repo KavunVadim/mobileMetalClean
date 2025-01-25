@@ -1,93 +1,153 @@
+import { useTranslation } from 'react-i18next';
 import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 
+const ContactInfoItem = ({ icon: Icon, title, description, href }) => (
+  <div className="flex items-start space-x-4 ">
+    <div className="p-3 bg-cyan-400/10 rounded-lg">
+      <Icon className="w-6 h-6 text-cyan-400" />
+    </div>
+    <div>
+      <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
+      <p className="text-gray-400">
+        <a href={href} className="text-cyan-400 hover:underline">
+          {description}
+        </a>
+      </p>
+    </div>
+  </div>
+);
+
+const ChatButton = ({
+  gradientFrom,
+  gradientTo,
+  hoverFrom,
+  hoverTo,
+  iconSrc,
+  children,
+  ...props
+}) => (
+  <a
+    {...props}
+    target="_blank"
+    className={`flex items-center space-x-3 bg-gradient-to-r ${gradientFrom} ${gradientTo} text-white px-6 py-3 rounded-lg hover:${hoverFrom} hover:${hoverTo} transition-all shadow-lg hover:shadow-xl`}
+  >
+    <img src={iconSrc} alt="" className="w-6 h-6" aria-hidden="true" />
+    <span>{children}</span>
+  </a>
+);
+
+const chatServices = [
+  {
+    gradientFrom: 'from-green-400',
+    gradientTo: 'to-green-600',
+    hoverFrom: 'from-green-500',
+    hoverTo: 'to-green-700',
+    iconSrc: 'https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg',
+    children: 'chatWhatsApp',
+    href: 'https://wa.me/34678744950',
+  },
+  {
+    gradientFrom: 'from-blue-400',
+    gradientTo: 'to-blue-600',
+    hoverFrom: 'from-blue-500',
+    hoverTo: 'to-blue-700',
+    iconSrc:
+      'https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg',
+    children: 'chatTelegram',
+    href: 'https://t.me/EuroDTV',
+  },
+  {
+    gradientFrom: 'from-red-400',
+    gradientTo: 'to-red-600',
+    hoverFrom: 'from-red-500',
+    hoverTo: 'to-red-700',
+    iconSrc:
+      'https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg',
+    children: 'chatEmail',
+    href: 'mailto:eurodetective80@gmail.com',
+  },
+];
+
+const contactItems = [
+  {
+    icon: Phone,
+    title: 'callUs',
+    description: '+34 678 74 49 50',
+    href: 'tel:+34678744950', // Для дзвінка
+  },
+  {
+    icon: Mail,
+    title: 'email',
+    description: 'eurodetective80@gmail.com',
+    href: 'mailto:eurodetective80@gmail.com', // Для надсилання email
+  },
+  {
+    icon: MapPin,
+    title: 'serviceArea',
+    description: 'Greater Metropolitan Area',
+    href: 'https://www.google.com/maps/dir/?api=1&destination=Greater+Metropolitan+Area', // Для прокладання маршруту
+  },
+];
+
 export default function Contact() {
+  const { t } = useTranslation();
+
   return (
-    <section id="contact" className="bg-gray-900 py-20">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="bg-gray-900 py-20 relative">
+      {/* Map Background */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-black opacity-50" />
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093747!2d144.9537353153166!3d-37.816279742021665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d2aabc5e2f1a!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1625070000000!5m2!1sen!2sus"
+          width="100%"
+          height="100%"
+          className="border-0"
+          allowFullScreen
+          loading="lazy"
+          title="Google Maps"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-white mb-12 text-center">
-            Contact Us
+            {t('contact.title')}
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-12 bg-gray-900/90 p-8 rounded-lg">
+            {/* Contact Information */}
+            <div className="space-y-8">
+              {contactItems.map((item, index) => (
+                <ContactInfoItem
+                  key={index}
+                  title={t(`contact.${item.title}`)}
+                  description={item.description}
+                  icon={item.icon}
+                />
+              ))}
+            </div>
+
+            {/* Quick Chat */}
             <div className="space-y-8">
               <div className="flex items-start space-x-4">
-                <Phone className="w-6 h-6 text-cyan-400 mt-1" />
-                <div>
-                  <h3 className="text-xl font-semibold text-white mb-2">
-                    Call Us
-                  </h3>
-                  <p className="text-gray-400">+1 (555) 123-4567</p>
+                <div className="p-3 bg-cyan-400/10 rounded-lg">
+                  <MessageCircle className="w-6 h-6 text-cyan-400" />
                 </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <Mail className="w-6 h-6 text-cyan-400 mt-1" />
-                <div>
+                <div className="flex-1">
                   <h3 className="text-xl font-semibold text-white mb-2">
-                    Email
+                    {t('contact.chatTitle')}
                   </h3>
-                  <p className="text-gray-400">info@lasercleaning.com</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <MapPin className="w-6 h-6 text-cyan-400 mt-1" />
-                <div>
-                  <h3 className="text-xl font-semibold text-white mb-2">
-                    Service Area
-                  </h3>
-                  <p className="text-gray-400">Greater Metropolitan Area</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <MessageCircle className="w-6 h-6 text-cyan-400 mt-1" />
-                <div>
-                  <h3 className="text-xl font-semibold text-white mb-2">
-                    Quick Chat
-                  </h3>
-                  <div className="flex space-x-4">
-                    <button className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
-                      WhatsApp
-                    </button>
-                    <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                      Telegram
-                    </button>
+                  <div className="flex flex-col space-y-4">
+                    {chatServices.map((service, index) => (
+                      <ChatButton key={index} {...service}>
+                        {t(`contact.${service.children}`)}
+                      </ChatButton>
+                    ))}
                   </div>
                 </div>
               </div>
             </div>
-
-            <form className="space-y-6">
-              <div>
-                <label className="block text-white mb-2">Name</label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-cyan-400"
-                />
-              </div>
-
-              <div>
-                <label className="block text-white mb-2">Email</label>
-                <input
-                  type="email"
-                  className="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-cyan-400"
-                />
-              </div>
-
-              <div>
-                <label className="block text-white mb-2">Message</label>
-                <textarea
-                  rows={4}
-                  className="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-cyan-400"
-                ></textarea>
-              </div>
-
-              <button className="w-full bg-cyan-500 text-white py-3 rounded-lg font-semibold hover:bg-cyan-600 transition-colors">
-                Send Message
-              </button>
-            </form>
           </div>
         </div>
       </div>

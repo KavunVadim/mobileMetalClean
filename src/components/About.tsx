@@ -1,42 +1,36 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Truck, Zap, Leaf, Anchor } from 'lucide-react';
+import { Truck, Zap, Leaf, Ship } from 'lucide-react';
+import { useTranslation } from 'react-i18next'; // Імпорт useTranslation
 
 export default function About() {
+  const { t } = useTranslation(); // Використання хука useTranslation
+
   const benefits = [
     {
       icon: Truck,
-      title: 'Mobile Service',
-      description: 'We come to you, no need for disassembly or transport.',
+      title: t('about.benefits.0.title'), // Переклад для першої переваги
+      description: t('about.benefits.0.description'),
     },
     {
       icon: Zap,
-      title: 'Efficient Cleaning',
-      description:
-        'Our laser technology provides fast and thorough cleaning for all types of metal surfaces.',
+      title: t('about.benefits.1.title'), // Переклад для другої переваги
+      description: t('about.benefits.1.description'),
     },
     {
       icon: Leaf,
-      title: 'Eco-Friendly',
-      description:
-        'No chemicals used, minimal waste produced during the process.',
+      title: t('about.benefits.2.title'), // Переклад для третьої переваги
+      description: t('about.benefits.2.description'),
     },
     {
-      icon: Anchor,
-      title: 'Marine Expertise',
-      description: 'Specialized in cleaning boats and marine equipment.',
+      icon: Ship,
+      title: t('about.benefits.3.title'), // Переклад для четвертої переваги
+      description: t('about.benefits.3.description'),
     },
   ];
 
-  const applications = [
-    'Residential: Fences, gates, and metal structures',
-    'Commercial: Industrial equipment and machinery',
-    'Cultural sites: Monuments and historical metal artifacts',
-    'Marine: Boats, yachts, and maritime equipment',
-    'Nautical: Anchors, propellers, and other boat parts',
-    'Docks and Marinas: Metal structures exposed to saltwater',
-  ];
+  const applications = t('about.applications.items', { returnObjects: true }); // Отримання списку областей застосування
 
   return (
     <section id="about" className="py-20 bg-gray-800">
@@ -47,7 +41,7 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="text-3xl md:text-4xl font-bold mb-12 text-center"
         >
-          About Our Service
+          {t('about.title')} {/* Переклад для заголовка */}
         </motion.h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
@@ -70,10 +64,12 @@ export default function About() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-12 text-center"
         >
-          <h3 className="text-2xl font-semibold mb-4">Areas of Application</h3>
+          <h3 className="text-2xl font-semibold mb-4">
+            {t('about.applications.title')}{' '}
+            {/* Переклад для заголовка областей застосування */}
+          </h3>
           <p className="text-gray-300 max-w-2xl mx-auto mb-6">
-            Our laser cleaning technology is suitable for a wide range of
-            applications, including marine and nautical equipment:
+            {t('about.applications.description')} {/* Переклад для опису */}
           </p>
           <ul className="grid md:grid-cols-2 gap-4 text-left max-w-2xl mx-auto">
             {applications.map((app, index) => (
@@ -103,14 +99,13 @@ export default function About() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-12 text-center"
         >
-          <h3 className="text-2xl font-semibold mb-4">Marine Laser Cleaning</h3>
+          <h3 className="text-2xl font-semibold mb-4">
+            {t('about.marineCleaning.title')}{' '}
+            {/* Переклад для заголовка морської очистки */}
+          </h3>
           <p className="text-gray-300 max-w-2xl mx-auto">
-            Our specialized laser cleaning service is perfect for the marine
-            industry. We can effectively remove rust, barnacles, and other
-            contaminants from boats, yachts, and various maritime equipment. Our
-            process is gentle on the underlying material, making it ideal for
-            preserving the integrity of your valuable marine assets while
-            restoring their appearance and functionality.
+            {t('about.marineCleaning.description')}{' '}
+            {/* Переклад для опису морської очистки */}
           </p>
         </motion.div>
       </div>
