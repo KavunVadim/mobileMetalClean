@@ -64,7 +64,7 @@ const chatServices = [
     iconSrc:
       'https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg',
     children: 'chatEmail',
-    href: 'mailto:eurodetective80@gmail.com',
+    href: 'mailto:ecolaserclean.es@gmail.com',
   },
 ];
 
@@ -78,8 +78,8 @@ const contactItems = [
   {
     icon: Mail,
     title: 'email',
-    description: 'eurodetective80@gmail.com',
-    href: 'mailto:eurodetective80@gmail.com', // Для надсилання email
+    description: 'ecolaserclean.es@gmail.com',
+    href: 'mailto:ecolaserclean.es@gmail.com', // Для надсилання email
   },
   {
     icon: MapPin,

@@ -68,9 +68,11 @@ export default function About() {
             {t('about.applications.title')}{' '}
             {/* Переклад для заголовка областей застосування */}
           </h3>
-          <p className="text-gray-300 max-w-2xl mx-auto mb-6">
-            {t('about.applications.description')} {/* Переклад для опису */}
-          </p>
+
+          {/* <p className="text-gray-300 max-w-2xl mx-auto mb-6">
+            {t('about.applications.description')}
+          </p> */}
+
           <ul className="grid md:grid-cols-2 gap-4 text-left max-w-2xl mx-auto">
             {applications.map((app, index) => (
               <li key={index} className="flex items-start">

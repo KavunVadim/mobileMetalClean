@@ -1,7 +1,8 @@
 'use client';
 
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-
+import { useTranslation } from 'react-i18next';
 import {
   Zap,
   Building,
@@ -15,70 +16,129 @@ import {
   Clock,
 } from 'lucide-react';
 
-import { useTranslation } from 'react-i18next';
+// Сервіс компонент
+const ServiceCard = React.memo(
+  ({ icon: Icon, title, description, videoSrc }: Service) => {
+    const [isVisible, setIsVisible] = useState(false);
+    const cardRef = React.useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => setIsVisible(entry.isIntersecting),
+        { threshold: 0.5 }
+      );
+      if (cardRef.current) {
+        observer.observe(cardRef.current);
+      }
+      return () => {
+        if (cardRef.current) {
+          observer.unobserve(cardRef.current);
+        }
+      };
+    }, []);
+
+    return (
+      <motion.div
+        ref={cardRef}
+        initial={{ opacity: 0, y: 20 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8 }}
+        className="bg-gray-800 rounded-lg overflow-hidden shadow-lg group"
+      >
+        <div className="relative h-48 overflow-hidden">
+          {isVisible && (
+            <video
+              playsInline
+              autoPlay
+              src={videoSrc}
+              className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300"
+              loop
+              muted
+            />
+          )}
+          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center z-20">
+            <Icon className="w-16 h-16 text-blue-500" />
+          </div>
+        </div>
+        <div className="p-6">
+          <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+          <p className="text-gray-400">{description}</p>
+        </div>
+      </motion.div>
+    );
+  }
+);
+
+// Основний компонент
+interface Service {
+  icon: React.ComponentType<any>;
+  title: string;
+  description: string;
+  videoSrc: string;
+}
 
 export default function Services() {
   const { t } = useTranslation();
-  const services = [
+  const services: Service[] = [
     {
       icon: Zap,
       title: t('services.zap.title'),
       description: t('services.zap.description'),
-      videoSrc: '/videos/services/zap.webm', // Add video path
+      videoSrc: '/videos/services/zap.webm',
     },
     {
       icon: Building,
       title: t('services.building.title'),
       description: t('services.building.description'),
-      videoSrc: '/videos/services/building.webm', // Add video path
+      videoSrc: '/videos/services/building.webm',
     },
     {
       icon: Ship,
       title: t('services.ship.title'),
       description: t('services.ship.description'),
-      videoSrc: '/videos/services/ship.webm', // Add video path
+      videoSrc: '/videos/services/ship.webm',
     },
     {
       icon: Landmark,
       title: t('services.landmark.title'),
       description: t('services.landmark.description'),
-      videoSrc: '/videos/services/landmark.webm', // Add video path
+      videoSrc: '/videos/services/landmark.webm',
     },
     {
       icon: Truck,
       title: t('services.truck.title'),
       description: t('services.truck.description'),
-      videoSrc: '/videos/vehicle-video.mp4', // Add video path
+      videoSrc: '/videos/services/truck.webm',
     },
     {
       icon: Spray,
       title: t('services.spray.title'),
       description: t('services.spray.description'),
-      videoSrc: '/videos/graffiti-video.mp4', // Add video path
+      videoSrc: '/videos/services/spray.mp4',
     },
     {
       icon: Industry,
       title: t('services.industry.title'),
       description: t('services.industry.description'),
-      videoSrc: '/videos/industrial-video.mp4', // Add video path
+      videoSrc: '/videos/services/industry.webm',
     },
     {
       icon: PaintBucket,
       title: t('services.paintBucket.title'),
       description: t('services.paintBucket.description'),
-      videoSrc: '/videos/painting-video.mp4', // Add video path
+      videoSrc: '/videos/services/paintBucket.webm',
     },
     {
       icon: Blinds,
       title: t('services.blinds.title'),
       description: t('services.blinds.description'),
-      videoSrc: '/videos/shutters-video.mp4', // Add video path
+      videoSrc: '/videos/services/blinds.webm',
     },
     {
       icon: Clock,
       title: t('services.clock.title'),
       description: t('services.clock.description'),
-      videoSrc: '/videos/maintenance-video.mp4', // Add video path
+      videoSrc: '/videos/services/clock.webm',
     },
   ];
 
@@ -95,34 +155,7 @@ export default function Services() {
         </motion.h2>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="bg-gray-800 rounded-lg overflow-hidden shadow-lg group"
-            >
-              <div className="relative h-48 overflow-hidden">
-                <video
-                  playsInline
-                  autoPlay
-                  src={service.videoSrc} // Set video source
-                  alt={`${t('services.title')} - ${service.title}`}
-                  className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-300"
-                  loop
-                  muted
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center z-20">
-                  <service.icon className="w-16 h-16 text-blue-500" />
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-white">
-                  {service.title}
-                </h3>
-                <p className="text-gray-400">{service.description}</p>
-              </div>
-            </motion.div>
+            <ServiceCard key={index} {...service} />
           ))}
         </div>
       </div>
