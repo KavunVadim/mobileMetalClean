@@ -29,7 +29,7 @@ export default function Hero() {
           muted
           loop
           playsInline
-          className="absolute top-1/2 left-1/2 w-[150%] h-[150%] -translate-x-1/2 -translate-y-1/2 max-lg:w-[400%] object-cover"
+          className="object-cover w-full h-full"
           title="Hero Background Video"
         >
           <source src="/videos/services/bg-hero.mp4" type="video/mp4" />
