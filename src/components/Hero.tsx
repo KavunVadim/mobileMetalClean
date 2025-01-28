@@ -41,7 +41,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
       {/* Content */}
-      <div className="absolute z-10 text-center pb-4">
+      <div className="absolute max-sm:top-0 z-10 text-center pb-4 px-2">
         {/* Logo */}
         <motion.img
           src="/images/logo.webp"
@@ -59,7 +59,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl md:text-6xl font-bold text-white mb-8 drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)]"
+          className=" text-3xl md:text-6xl font-bold text-white mb-8 drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)]"
         >
           {t('hero.title')}
           <span className="block text-[#b09a0b] mt-5 drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)]">

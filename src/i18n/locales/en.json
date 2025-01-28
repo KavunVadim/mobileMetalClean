@@ -7,9 +7,9 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Perfect Metal Cleaning",
-    "subtitle": "No Disassembly Required",
-    "description": "Fast, effective, and eco-friendly laser cleaning for all metal surfaces",
+    "title": "Perfect cleaning for all types of surfaces",
+    "subtitle": "Disassembly and delivery not required",
+    "description": "Fast, effective, and eco-friendly laser cleaning of all types of metal, stone, and wood surfaces.",
     "button": "Order Service"
   },
   "about": {
@@ -21,7 +21,7 @@
       },
       {
         "title": "Efficient Cleaning",
-        "description": "Our laser technology provides fast and thorough cleaning for all types of metal surfaces."
+        "description": "Our laser technology ensures fast and thorough cleaning of all types of surfaces, removing rust, mold, and paint without damaging the material itself."
       },
       {
         "title": "Eco-Friendly",
@@ -128,5 +128,19 @@
     "chatWhatsApp": "Chat on WhatsApp",
     "chatTelegram": "Message on Telegram",
     "chatEmail": "Email Us"
+  },
+  "reviews": {
+    "title": "Our Client Reviews",
+    "noReviews": "No reviews found",
+    "leaveReview": "Leave a Review",
+    "filterAll": "All",
+    "form": {
+      "name": "Name",
+      "rating": "Rating",
+      "comment": "Comment",
+      "submit": "Submit",
+      "namePlaceholder": "Enter your name",
+      "commentPlaceholder": "Enter your comment"
+    }
   }
 }

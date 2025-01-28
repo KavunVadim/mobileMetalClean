@@ -6,6 +6,7 @@ const Services = lazy(() => import('./components/Services'));
 const Portfolio = lazy(() => import('./components/Portfolio'));
 const Contact = lazy(() => import('./components/Contact'));
 const About = lazy(() => import('./components/About'));
+const Reviews = lazy(() => import('./components/Reviews'));
 
 function LoadingSpinner() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <About />
         <Services />
         <Portfolio />
+        <Reviews />
         <Contact />
       </Suspense>
     </div>

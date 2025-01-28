@@ -7,9 +7,9 @@
     "contact": "Contacto"
   },
   "hero": {
-    "title": "Limpieza Perfecta de Metales",
-    "subtitle": "Sin Desmontaje Requerido",
-    "description": "Limpieza láser rápida, efectiva y ecológica para todas las superficies metálicas",
+    "title": "Limpieza perfecta para todo tipo de superficies",
+    "subtitle": "No se requiere desmontaje ni entrega",
+    "description": "Limpieza láser rápida, efectiva y ecológica de todo tipo de superficies de metal, piedra y madera.",
     "button": "Solicitar Servicio"
   },
 
@@ -22,7 +22,7 @@
       },
       {
         "title": "Limpieza Eficiente",
-        "description": "Nuestra tecnología láser proporciona una limpieza rápida y profunda para todo tipo de superficies metálicas."
+        "description": "Nuestra tecnología láser garantiza una limpieza rápida y exhaustiva de todo tipo de superficies, eliminando óxido, moho y pintura sin dañar el material en sí."
       },
       {
         "title": "Ecológico",
@@ -130,5 +130,20 @@
     "chatWhatsApp": "Chatea en WhatsApp",
     "chatTelegram": "Mensaje en Telegram",
     "chatEmail": "Envíanos un correo"
+  },
+
+  "reviews": {
+    "title": "Opiniones de nuestros clientes",
+    "noReviews": "No se encontraron opiniones",
+    "leaveReview": "Dejar una opinión",
+    "filterAll": "Todos",
+    "form": {
+      "name": "Nombre",
+      "rating": "Calificación",
+      "comment": "Comentario",
+      "submit": "Enviar",
+      "namePlaceholder": "Ingrese su nombre",
+      "commentPlaceholder": "Ingrese su comentario"
+    }
   }
 }
