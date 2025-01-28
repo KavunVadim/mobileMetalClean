@@ -176,13 +176,13 @@ const Reviews = () => {
                 <div className="absolute bottom-[-60px] w-full flex justify-center gap-4 px-4">
                   <button
                     onClick={prevSlide}
-                    className="bg-gray-800 hover:bg-gray-700 w-10 h-10 text-white p-2 rounded-full"
+                    className="bg-gray-500 hover:bg-gray-700 w-10 h-10 text-white p-2 rounded-full"
                   >
                     ←
                   </button>
                   <button
                     onClick={nextSlide}
-                    className="bg-gray-800 hover:bg-gray-700 w-10 h-10 text-white p-2 rounded-full"
+                    className="bg-gray-500 hover:bg-gray-700 w-10 h-10 text-white p-2 rounded-full"
                   >
                     →
                   </button>
