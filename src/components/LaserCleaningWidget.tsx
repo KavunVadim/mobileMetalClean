@@ -4,10 +4,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next'; // Додано i18next для багатомовності
 
 const SOCIAL_LINKS_DATA = {
-  telegram: 'https://t.me/yourusername',
-  whatsapp: 'https://wa.me/1234567890',
-  email: 'mailto:info@laserclean.com',
-  phone: 'tel:+1234567890',
+  telegram: 'https://t.me/EuroDTV',
+  whatsapp: 'https://wa.me/34678744950',
+  email: 'mailto:ecolaserclean.es@gmail.com',
+  phone: 'tel:+34678744950',
 };
 
 const pulseAnimation = {
