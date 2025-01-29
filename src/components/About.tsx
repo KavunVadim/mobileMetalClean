@@ -35,8 +35,8 @@ export default function About() {
   }) as string[];
 
   return (
-    <section id="about" className="py-20 bg-gray-800">
-      <div className="container mx-auto px-4 text-white">
+    <section id="about" className="py-20 bg-gray-800 ">
+      <div className="container mx-auto px-4 text-white overflow-hidden">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -95,7 +95,7 @@ export default function About() {
               initial={{ opacity: 0, x: 60 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="w-[300px] h-auto absolute top-0 right-0 z-50"
+              className="w-[300px] h-auto absolute top-0 right-0 z-50 ov"
               style={{ overflow: 'hidden' }}
             >
               <motion.img
