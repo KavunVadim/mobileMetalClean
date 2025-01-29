@@ -45,12 +45,10 @@ const getInitialReviews = (): Review[] => [
 ];
 
 const ReviewCard = ({ review }: { review: Review }) => {
-  const { t } = useTranslation();
-
   if (!review) return null;
 
   return (
-    <div className="bg-gray-900 rounded-lg p-6 shadow-lg transition-all duration-300 transform hover:scale-105">
+    <div className="bg-gray-900 rounded-lg p-6 shadow-lg transition-all duration-300 transform hover:scale-105 max-h-[280px] overflow-auto">
       <div className="flex items-center mb-4">
         <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mr-4">
           <span className="text-2xl text-gray-300">
@@ -168,7 +166,7 @@ const Reviews = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-800">
+    <section id="reviews" className="py-20 bg-gray-800">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-white">
           {t('reviews.title')}
@@ -219,7 +217,7 @@ const Reviews = () => {
           )}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-14 max-sm:mt-20 text-center">
           <button
             onClick={() => setShowModal(true)}
             className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg"

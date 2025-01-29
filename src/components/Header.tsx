@@ -6,7 +6,14 @@ import { useTranslation } from 'react-i18next';
 import { Globe } from 'lucide-react';
 
 // Константи для навігаційних пунктів
-const NAV_ITEMS = ['Home', 'About', 'Services', 'Portfolio', 'Contact'];
+const NAV_ITEMS = [
+  'Home',
+  'About',
+  'Services',
+  'Portfolio',
+  'Reviews',
+  'Contact',
+];
 
 export default function Header() {
   const { t, i18n } = useTranslation();
