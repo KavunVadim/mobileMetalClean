@@ -106,17 +106,37 @@
       },
       "project2": {
         "title": "Limpieza del Casco de un Yate",
-        "description": "Eliminación de algas y acumulaciones marinas del casco de un yate de lujo, mejorando su rendimiento y apariencia.",
+        "description": "Eliminación de algas y crecimiento marino del casco de un yate de lujo, mejorando su rendimiento y apariencia.",
         "category": "mantenimiento"
       },
       "project3": {
         "title": "Mantenimiento de Equipos Industriales",
-        "description": "Limpieza precisa de equipos industriales sensibles, extendiendo su vida útil y eficiencia.",
+        "description": "Limpieza precisa de equipos industriales sensibles, prolongando su vida útil y eficiencia.",
         "category": "mantenimiento"
       },
       "project4": {
         "title": "Preservación de un Monumento Histórico",
-        "description": "Limpieza delicada de una estatua de bronce, preservando su integridad histórica mientras se restaura su apariencia.",
+        "description": "Limpieza delicada de una estatua de bronce, preservando su integridad histórica y restaurando su apariencia.",
+        "category": "restauración"
+      },
+      "project5": {
+        "title": "Preservación de un Monumento Histórico",
+        "description": "Limpieza delicada de una estatua de bronce, preservando su integridad histórica y restaurando su apariencia.",
+        "category": "restauración"
+      },
+      "project6": {
+        "title": "Limpieza Láser de Persianas Enrollables",
+        "description": "Eliminación eficiente de óxido, suciedad y pintura vieja de persianas enrollables mediante tecnología láser, garantizando una superficie limpia y bien conservada.",
+        "category": "restauración"
+      },
+      "project7": {
+        "title": "Limpieza Láser de Paredes con Grafitis",
+        "description": "Eliminación segura y precisa de grafitis en paredes mediante tecnología láser, preservando la superficie original sin daños.",
+        "category": "restauración"
+      },
+      "project8": {
+        "title": "Eliminación Láser de Pintura en Metales",
+        "description": "Eliminación efectiva y no abrasiva de pintura en superficies metálicas mediante tecnología láser, preservando la integridad del material.",
         "category": "restauración"
       }
     }

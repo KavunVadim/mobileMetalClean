@@ -10,9 +10,9 @@ const Reviews = lazy(() => import('./components/Reviews'));
 
 function LoadingSpinner() {
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex items-center justify-center h-screen" aria-live="polite">
       <div className="animate-pulse rounded-full bg-gray-700">
-        <img src="./images/logo.webp" alt="logo" width={400} height={400} />
+        <img src="./images/logo.webp" alt="Loading-logo" width={400} height={400} />
       </div>
     </div>
   );
@@ -20,7 +20,7 @@ function LoadingSpinner() {
 
 function App() {
   return (
-    <div className="bg-gray-900">
+    <div className="bg-gray-900" role="main">
       <Suspense fallback={<LoadingSpinner />}>
         <Header />
         <Hero />

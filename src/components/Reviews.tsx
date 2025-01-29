@@ -1,7 +1,15 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const getInitialReviews = (t) => [
+interface Review {
+  id: number;
+  name: string;
+  rating: number;
+  comment: string;
+  createdAt: string;
+}
+
+const getInitialReviews = (): Review[] => [
   {
     id: 1,
     name: 'Ivan Petrenko',
@@ -25,7 +33,7 @@ const getInitialReviews = (t) => [
   },
 ];
 
-const ReviewCard = ({ review }) => {
+const ReviewCard = ({ review }: { review: Review }) => {
   const { t } = useTranslation();
 
   if (!review) return null;
@@ -62,7 +70,7 @@ const ReviewCard = ({ review }) => {
   );
 };
 
-const Modal = ({ show, onClose, children }) => {
+const Modal = ({ show, onClose, children }: { show: boolean; onClose: () => void; children: React.ReactNode }) => {
   if (!show) return null;
 
   return (
@@ -85,7 +93,7 @@ const Modal = ({ show, onClose, children }) => {
 
 const Reviews = () => {
   const { t } = useTranslation();
-  const [reviews, setReviews] = useState(() => getInitialReviews(t));
+  const [reviews, setReviews] = useState(getInitialReviews);
   const [filterRating, setFilterRating] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showModal, setShowModal] = useState(false);
@@ -106,7 +114,7 @@ const Reviews = () => {
   }, [filteredReviews]);
 
   const handleSubmit = useCallback(
-    (e) => {
+    (e: React.FormEvent) => {
       e.preventDefault();
       if (!newReview.name || !newReview.comment) {
         return;

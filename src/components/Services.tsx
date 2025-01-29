@@ -56,9 +56,9 @@ const ServiceCard = React.memo(
               muted
             />
           )}
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center z-20">
-            <Icon className="w-16 h-16 text-blue-500" />
-          </div>
+
+          <div className="absolute inset-0 bg-black bg-opacity-50 z-20" />
+          <Icon className="w-16 h-16 text-blue-500 absolute top-4 right-4 z-40" />
         </div>
         <div className="p-6">
           <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
@@ -71,7 +71,7 @@ const ServiceCard = React.memo(
 
 // Основний компонент
 interface Service {
-  icon: React.ComponentType<any>;
+  icon: React.ComponentType;
   title: string;
   description: string;
   videoSrc: string;

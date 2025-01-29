@@ -4,12 +4,23 @@ import { ZoomInOutlined } from '@ant-design/icons';
 
 import { useTranslation } from 'react-i18next';
 
+interface PortfolioItem {
+  id: number;
+  title: string;
+  description: string;
+  before: string;
+  after: string;
+  category: string;
+}
+
 export default function Portfolio() {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const [currentItem, setCurrentItem] = React.useState(null);
+  const [currentItem, setCurrentItem] = React.useState<PortfolioItem | null>(
+    null
+  );
   const { t } = useTranslation();
 
-  const portfolioItems = [
+  const portfolioItems: PortfolioItem[] = [
     {
       id: 1,
       title: t('portfolio.items.project1.title'),
@@ -22,8 +33,8 @@ export default function Portfolio() {
       id: 2,
       title: t('portfolio.items.project2.title'),
       description: t('portfolio.items.project2.description'),
-      before: '/images/portfolio/item2-before.webp',
-      after: '/images/portfolio/item2-after.webp',
+      before: '/images/portfolio/yacht-befor.webp',
+      after: '/images/portfolio/yacht-after.webp',
       category: t('portfolio.items.project2.category'),
     },
     {
@@ -38,9 +49,41 @@ export default function Portfolio() {
       id: 4,
       title: t('portfolio.items.project4.title'),
       description: t('portfolio.items.project4.description'),
-      before: '/images/portfolio/item-before.webp',
-      after: '/images/portfolio/item-after.webp',
+      before: '/images/portfolio/memorial-before.webp',
+      after: '/images/portfolio/memorial-after.webp',
       category: t('portfolio.items.project4.category'),
+    },
+    {
+      id: 5,
+      title: t('portfolio.items.project5.title'),
+      description: t('portfolio.items.project5.description'),
+      before: '/images/portfolio/memorial-2-before.webp',
+      after: '/images/portfolio/memorial-2-after.webp',
+      category: t('portfolio.items.project5.category'),
+    },
+    {
+      id: 6,
+      title: t('portfolio.items.project6.title'),
+      description: t('portfolio.items.project6.description'),
+      before: '/images/portfolio/rolet-before.webp',
+      after: '/images/portfolio/rolet-after.webp',
+      category: t('portfolio.items.project6.category'),
+    },
+    {
+      id: 7,
+      title: t('portfolio.items.project7.title'),
+      description: t('portfolio.items.project7.description'),
+      before: '/images/portfolio/wall-before.webp',
+      after: '/images/portfolio/wall-after.webp',
+      category: t('portfolio.items.project7.category'),
+    },
+    {
+      id: 8,
+      title: t('portfolio.items.project8.title'),
+      description: t('portfolio.items.project8.description'),
+      before: '/images/portfolio/barrel-before.webp',
+      after: '/images/portfolio/barrel-after.webp',
+      category: t('portfolio.items.project8.category'),
     },
   ];
 
@@ -153,13 +196,13 @@ export default function Portfolio() {
           >
             <h3 className="text-xl font-semibold mb-4">{currentItem?.title}</h3>
             <p className="text-gray-700 mb-4">{currentItem?.description}</p>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-2">
               <div>
                 <h4 className="font-semibold mb-2">{t('portfolio.before')}</h4>
                 <img
                   src={currentItem?.before}
                   alt={`${t('portfolio.before')} - ${currentItem?.title}`}
-                  className="w-full h-auto rounded-md"
+                  className="w-full md:h-[500px] object-cover rounded-md"
                 />
               </div>
               <div>
@@ -167,7 +210,7 @@ export default function Portfolio() {
                 <img
                   src={currentItem?.after}
                   alt={`${t('portfolio.after')} - ${currentItem?.title}`}
-                  className="w-full h-auto rounded-md"
+                  className="w-full md:h-[500px] object-cover  rounded-md"
                 />
               </div>
             </div>

@@ -11,18 +11,9 @@ export default function Hero() {
     <section
       id="home"
       className="relative h-screen w-full overflow-hidden flex justify-center items-center hero-video"
+      aria-label="Hero Section"
     >
       {/* Background Video */}
-      {/* <div className="absolute inset-0 overflow-hidden w-full">
-        <iframe
-          src="https://www.youtube.com/embed/ssaNTgwY8zE?autoplay=1&mute=1&loop=1&playlist=ssaNTgwY8zE&controls=0&modestbranding=1&rel=0"
-          allow="encrypted-media;"
-          allowFullScreen
-          loading="lazy"
-          className="absolute top-1/2 left-1/2 w-[150%] h-[150%] -translate-x-1/2 -translate-y-1/2 max-lg:w-[400%] object-cover"
-          title="Hero Background Video"
-        ></iframe>
-      </div> */}
       <div className="absolute inset-0 overflow-hidden w-full">
         <video
           autoPlay
@@ -31,6 +22,7 @@ export default function Hero() {
           playsInline
           className="object-cover w-full h-full"
           title="Hero Background Video"
+          aria-hidden="true"
         >
           <source src="/videos/services/bg-hero.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -59,7 +51,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className=" text-3xl md:text-6xl font-bold text-white mb-8 drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)]"
+          className="text-3xl md:text-6xl font-bold text-white mb-8 drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)]"
         >
           {t('hero.title')}
           <span className="block text-[#b09a0b] mt-5 drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)]">
@@ -78,16 +70,16 @@ export default function Hero() {
         </motion.p>
 
         {/* Call to Action Button */}
-        <motion.a
-          href="#contact"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+<motion.a
+  href="#contact"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.4 }}
           className="inline-flex items-center bg-blue-500 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-600 transition-colors"
-        >
-          {t('hero.button')}
-          <ArrowRight className="ml-2" />
-        </motion.a>
+>
+  {t('hero.button')}
+  <ArrowRight className="ml-2" />
+</motion.a>
       </div>
     </section>
   );

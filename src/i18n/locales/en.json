@@ -116,6 +116,26 @@
         "title": "Preservation of a Historical Monument",
         "description": "Delicate cleaning of a bronze statue, preserving its historical integrity while restoring its appearance.",
         "category": "restoration"
+      },
+      "project5": {
+        "title": "Preservation of a Historical Monument",
+        "description": "Delicate cleaning of a bronze statue, preserving its historical integrity while restoring its appearance.",
+        "category": "restoration"
+      },
+      "project6": {
+        "title": "Laser Cleaning of Roller Shutters",
+        "description": "Efficient removal of rust, dirt, and old paint from roller shutters using laser technology, ensuring a clean and well-preserved surface.",
+        "category": "restoration"
+      },
+      "project7": {
+        "title": "Laser Cleaning of Walls from Graffiti",
+        "description": "Safe and precise removal of graffiti from walls using laser technology, preserving the original surface without damage.",
+        "category": "restoration"
+      },
+      "project8": {
+        "title": "Laser Paint Removal from Metals",
+        "description": "Effective and non-abrasive removal of paint from metal surfaces using laser technology, preserving the integrity of the material.",
+        "category": "restoration"
       }
     }
   },
