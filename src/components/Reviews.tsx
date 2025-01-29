@@ -12,24 +12,35 @@ interface Review {
 const getInitialReviews = (): Review[] => [
   {
     id: 1,
-    name: 'Ivan Petrenko',
+    name: 'Javier Martín',
     rating: 5,
-    comment: 'Excellent service! My yacht looks like new.',
-    createdAt: '2023-05-15T10:30:00Z',
+    comment:
+      'Limpieza de fachada impecable: Increíble trabajo eliminando la pintura vieja de la fachada de mi local. Todo el proceso fue rápido y sin dañar la pared. ¡Totalmente recomendado!',
+    createdAt: '2024-08-15T10:30:00Z',
   },
   {
     id: 2,
-    name: 'Olena Kovalenko',
-    rating: 4,
-    comment: 'Very professional team. Highly recommend!',
-    createdAt: '2023-05-14T14:45:00Z',
+    name: 'Carlos Rodríguez',
+    rating: 5,
+    comment:
+      'Restauración de barco perfecta: Mi velero tenía óxido y pintura deteriorada, pero después del servicio de Eco Laser Clean quedó como nuevo. ¡Gran profesionalismo y rapidez!',
+    createdAt: '2024-05-14T14:45:00Z',
   },
   {
     id: 3,
-    name: 'Mykhailo Shevchenko',
+    name: 'Marta López',
     rating: 5,
-    comment: 'Impressive results. Thanks for the excellent work!',
-    createdAt: '2023-05-13T09:15:00Z',
+    comment:
+      'Eliminación de óxido con láser: Llamé para eliminar grafitis en la persiana de mi negocio y en menos de una hora estaba impecable. Atención rápida y un equipo muy amable.',
+    createdAt: '2024-07-13T09:15:00Z',
+  },
+  {
+    id: 4,
+    name: 'Laura Fernández',
+    rating: 5,
+    comment:
+      'Servicio rápido y eficiente: Llamé para eliminar grafitis en la persiana de mi negocio y en menos de una hora estaba impecable. Atención rápida y un equipo muy amable.',
+    createdAt: '2024-02-12T16:20:00Z',
   },
 ];
 
@@ -70,7 +81,15 @@ const ReviewCard = ({ review }: { review: Review }) => {
   );
 };
 
-const Modal = ({ show, onClose, children }: { show: boolean; onClose: () => void; children: React.ReactNode }) => {
+const Modal = ({
+  show,
+  onClose,
+  children,
+}: {
+  show: boolean;
+  onClose: () => void;
+  children: React.ReactNode;
+}) => {
   if (!show) return null;
 
   return (
