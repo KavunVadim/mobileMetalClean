@@ -166,5 +166,13 @@
       "namePlaceholder": "Ingrese su nombre",
       "commentPlaceholder": "Ingrese su comentario"
     }
+  },
+
+  "widget": {
+    "contactUs": "Contáctanos",
+    "getConsultation": "Obtener una consulta ahora!",
+    "callUs": "Llámanos",
+    "openMenu": "Abrir el menú",
+    "closeMenu": "Cerrar el menú"
   }
 }

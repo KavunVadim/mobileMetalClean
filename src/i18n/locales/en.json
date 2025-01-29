@@ -163,5 +163,12 @@
       "namePlaceholder": "Enter your name",
       "commentPlaceholder": "Enter your comment"
     }
+  },
+  "widget": {
+    "contactUs": "Contact Us",
+    "getConsultation": "Get a consultation right now!",
+    "callUs": "Call Us",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   }
 }
