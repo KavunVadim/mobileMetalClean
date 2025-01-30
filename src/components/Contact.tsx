@@ -47,16 +47,6 @@ const chatServices = [
     href: 'https://wa.me/34678744950',
   },
   {
-    gradientFrom: 'from-blue-400',
-    gradientTo: 'to-blue-600',
-    hoverFrom: 'from-blue-500',
-    hoverTo: 'to-blue-700',
-    iconSrc:
-      'https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg',
-    children: 'chatTelegram',
-    href: 'https://t.me/EuroDTV',
-  },
-  {
     gradientFrom: 'from-red-400',
     gradientTo: 'to-red-600',
     hoverFrom: 'from-red-500',
@@ -124,6 +114,7 @@ export default function Contact() {
                   title={t(`contact.${item.title}`)}
                   description={item.description}
                   icon={item.icon}
+                  href={undefined}
                 />
               ))}
             </div>
