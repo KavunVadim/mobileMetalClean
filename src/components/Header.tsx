@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Globe } from 'lucide-react';
@@ -19,20 +19,26 @@ export default function Header() {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [activeItem, setActiveItem] = useState(NAV_ITEMS[0]); // Активний пункт меню
+  const [language, setLanguage] = useState(i18n.language.substring(0, 2));
+
   const headerRef = useRef(null); // Реф для header
   const dropdownRef = useRef(null); // Реф для випадаючого меню
 
   // Перемикання мови
   const toggleLanguage = useCallback(() => {
-    const newLang = i18n.language === 'en' ? 'es' : 'en';
-    i18n.changeLanguage(newLang);
-  }, [i18n]);
+    const currentLanguage = i18n.language.substring(0, 2); // Отримуємо поточну мову
+    const newLang = currentLanguage.startsWith('en') ? 'es' : 'en'; // Визначаємо нову мову
+
+    setLanguage(newLang);
+    i18n.changeLanguage(newLang).then(() => {
+      console.log('Мову змінено на:', newLang); // Логування для дебагу
+    });
+  }, [i18n, language]);
 
   // Плавна прокрутка до секції з урахуванням висоти header
   const scrollToSection = useCallback((id) => {
     if (headerRef.current) {
       const headerHeight = headerRef.current.offsetHeight;
-      console.log(headerHeight); // Поточна висота header
       const section = document.getElementById(id);
       if (section) {
         const sectionTop = section.offsetTop - headerHeight;
@@ -49,10 +55,7 @@ export default function Header() {
     (item) => {
       setActiveItem(item);
       setIsOpen(false); // Закриваємо мобільне меню
-      // Використовуємо setTimeout, щоб дати час на закриття меню перед прокруткою
-      setTimeout(() => {
-        scrollToSection(item.toLowerCase());
-      }, 100); // Затримка 100 мс
+      scrollToSection(item.toLowerCase()); // Прокрутка до секції
     },
     [scrollToSection]
   );
@@ -69,43 +72,51 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Рендер навігаційних пунктів
-  const renderNavItems = (isMobile = false) =>
-    NAV_ITEMS.map((item) => (
-      <a
-        key={item}
-        href={`#${item.toLowerCase()}`}
-        onClick={(e) => {
-          e.preventDefault();
-          handleNavClick(item);
-        }}
-        className={`${
-          isMobile
-            ? 'block py-3 px-6 text-2xl text-white hover:bg-gray-700'
-            : 'relative text-gray-300 hover:text-[#b09a0b]'
-        } transition-colors duration-300 ${
-          activeItem === item
-            ? isMobile
-              ? 'text-[#b09a0b] font-bold'
-              : 'text-[#b09a0b]'
-            : ''
-        }`}
-      >
-        {t(`header.${item.toLowerCase()}`)}
-        {!isMobile && activeItem === item && (
-          <motion.span
-            layoutId="underline"
-            className="absolute left-0 bottom-0 w-full h-0.5 bg-[#b09a0b]"
-            transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
-          />
-        )}
-      </a>
-    ));
+  // Синхронізація мови з i18n
+  useEffect(() => {
+    setLanguage(i18n.language.substring(0, 2));
+  }, [i18n.language]);
+
+  // Рендер навігаційних пунктів (мемоїзований)
+  const navItems = useMemo(
+    () =>
+      NAV_ITEMS.map((item) => (
+        <a
+          key={item}
+          href={`#${item.toLowerCase()}`}
+          onClick={(e) => {
+            e.preventDefault();
+            handleNavClick(item);
+          }}
+          className={`${
+            isOpen
+              ? 'block py-3 px-6 text-2xl text-white hover:bg-gray-700'
+              : 'relative text-gray-300 hover:text-[#b09a0b]'
+          } transition-colors duration-300 ${
+            activeItem === item
+              ? isOpen
+                ? 'text-[#b09a0b] font-bold'
+                : 'text-[#b09a0b]'
+              : ''
+          }`}
+        >
+          {t(`header.${item.toLowerCase()}`)}
+          {!isOpen && activeItem === item && (
+            <motion.span
+              layoutId="underline"
+              className="absolute left-0 bottom-0 w-full h-0.5 bg-[#b09a0b]"
+              transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
+            />
+          )}
+        </a>
+      )),
+    [activeItem, handleNavClick, isOpen, t]
+  );
 
   return (
     <header
       ref={headerRef}
-      className="sticky top-0  w-full z-50 bg-gray-900/95 backdrop-blur-sm shadow-xl"
+      className="sticky top-0 w-full z-50 bg-gray-900/95 backdrop-blur-sm shadow-xl"
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
@@ -118,7 +129,7 @@ export default function Header() {
               <span className="text-green-500">ECO</span> LASER CLEANING
             </a>
             {/* Навігація для десктопу */}
-            <nav className="hidden md:flex space-x-6">{renderNavItems()}</nav>
+            <nav className="hidden md:flex space-x-6">{navItems}</nav>
           </div>
 
           {/* Кнопка зміни мови та мобільне меню */}
@@ -126,9 +137,12 @@ export default function Header() {
             <button
               onClick={toggleLanguage}
               className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-300"
+              aria-label="Change language"
             >
               <Globe className="w-5 h-5" />
-              <span className="font-medium">{i18n.language.toUpperCase()}</span>
+              <span className="font-medium">
+                {language === 'en' ? 'EN' : 'ES'.toUpperCase()}
+              </span>
             </button>
 
             {/* Кнопка мобільного меню */}
@@ -136,21 +150,24 @@ export default function Header() {
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="text-white focus:outline-none flex items-center space-x-2"
+                aria-label={isOpen ? 'Close menu' : 'Open menu'}
               >
-                <svg className="h-8 w-8 fill-current" viewBox="0 0 24 24">
-                  {isOpen ? (
+                {isOpen ? (
+                  <svg className="h-8 w-8 fill-current" viewBox="0 0 24 24">
                     <path
                       fillRule="evenodd"
                       clipRule="evenodd"
                       d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
                     />
-                  ) : (
+                  </svg>
+                ) : (
+                  <svg className="h-8 w-8 fill-current" viewBox="0 0 24 24">
                     <path
                       fillRule="evenodd"
                       d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
                     />
-                  )}
-                </svg>
+                  </svg>
+                )}
               </button>
             </div>
           </div>
@@ -165,9 +182,10 @@ export default function Header() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="md:hidden bg-gray-800 py-4"
           >
-            {renderNavItems(true)}
+            {navItems}
           </motion.div>
         )}
       </AnimatePresence>

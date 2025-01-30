@@ -1,0 +1,171 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Ecolaser Clean",
+  "image": "https://ecolaserclean.es/images/logo.webp",
+  "telephone": "+34 123 456 789",
+  "email": "info@ecolaserclean.es",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle Principal, 123",
+    "addressLocality": "Madrid",
+    "addressRegion": "Madrid",
+    "postalCode": "28001",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 40.416775,
+    "longitude": -3.703790
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/ecolaserclean",
+    "https://www.instagram.com/ecolaserclean",
+    "https://www.linkedin.com/company/ecolaserclean"
+  ],
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "John Doe"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Excellent service! The laser cleaning of my metal fence was spotless. Highly recommend!"
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Jane Smith"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Fast and efficient. My yacht hull looks brand new after their cleaning. Thank you!"
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Alice Johnson"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Great job on restoring my historical monument. The laser cleaning was gentle and effective."
+    }
+  ],
+  "serviceArea": {
+    "@type": "AdministrativeArea",
+    "name": "Spain"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Laser Cleaning Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Laser cleaning of metal surfaces",
+          "description": "Fast and efficient removal of rust, paint, oxides, and dirt from metal structures while preserving the original texture of the material."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Facade restoration of buildings",
+          "description": "Cleaning facades from graffiti, dirt, mold, and old paint layers while preserving the aesthetics and historical value of the building."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cleaning of yachts and vessels",
+          "description": "Removal of algae, old coatings, and dirt from the hulls of yachts and vessels. Preparation for painting or corrosion protection."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Restoration of sculptures and monuments",
+          "description": "Delicate cleaning of historical monuments and sculptures from dirt, graffiti, or mold while fully preserving their structure and texture."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cleaning and preparation of equipment for priming and painting",
+          "description": "Laser removal of old coatings from cars, agricultural machinery, or construction machines. Preparation for further protection or painting."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Eco-friendly graffiti removal",
+          "description": "Safe and quick removal of graffiti from facades, shop windows, sculptures, or other objects without damaging the material."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Removal of scale and oil contamination",
+          "description": "Cleaning industrial pipes, tanks, and equipment from scale, oils, and other contaminants. Improving equipment efficiency."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Post-cleaning treatment: priming and painting",
+          "description": "Application of primer and paint after cleaning for long-lasting protection and aesthetic appearance."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cleaning, restoration, and painting of shutters",
+          "description": "Cleaning shutters from graffiti, dirt, and old paint. Restoration of damaged surfaces and application of new paint to restore aesthetics."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Regular maintenance of objects",
+          "description": "Offering continuous cleaning and surface treatment to maintain their perfect condition."
+        }
+      }
+    ]
+  }
+}

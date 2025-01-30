@@ -136,7 +136,10 @@ export default function Portfolio() {
                   index * 100
                 }`}
               >
-                <div className="relative h-96 overflow-hidden rounded-xl">
+                <div
+                  onClick={() => showModal(project)}
+                  className="relative h-96 overflow-hidden rounded-xl"
+                >
                   {/* Before Image */}
                   <img
                     src={project.before}

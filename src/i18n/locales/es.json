@@ -14,43 +14,43 @@
     "button": "Solicitar Servicio"
   },
 
-  "about": {
-    "title": "Sobre Nuestro Servicio",
-    "benefits": [
-      {
-        "title": "Servicio Móvil",
-        "description": "Vamos a ti, no es necesario desmontar o transportar."
-      },
-      {
-        "title": "Limpieza Eficiente",
-        "description": "Nuestra tecnología láser garantiza una limpieza rápida y exhaustiva de todo tipo de superficies, eliminando óxido, moho y pintura sin dañar el material en sí."
-      },
-      {
-        "title": "Ecológico",
-        "description": "No se utilizan productos químicos y se produce un mínimo de residuos durante el proceso."
-      },
-      {
-        "title": "Experiencia Marina",
-        "description": "Especializados en la limpieza de barcos y equipos marinos."
-      }
-    ],
-    "applications": {
-      "title": "Áreas de Aplicación",
-      "description": "Nuestra tecnología de limpieza láser es adecuada para una amplia gama de aplicaciones, incluyendo equipos marinos y náuticos:",
-      "items": [
-        "Residencial: Vallas, puertas y estructuras metálicas",
-        "Comercial: Equipos industriales y maquinaria",
-        "Sitios culturales: Monumentos y artefactos metálicos históricos",
-        "Marino: Barcos, yates y equipos marítimos",
-        "Náutico: Anclas, hélices y otras partes de barcos",
-        "Muelles y marinas: Estructuras metálicas expuestas al agua salada"
-      ]
+"about": {
+  "title": "Sobre Nuestro Servicio de Limpieza Láser en España",
+  "benefits": [
+    {
+      "title": "Servicio Móvil en España",
+      "description": "Vamos a ti en España, no es necesario desmontar o transportar."
     },
-    "marineCleaning": {
-      "title": "Limpieza Láser Marina",
-      "description": "Nuestro servicio especializado de limpieza láser es perfecto para la industria marina. Podemos eliminar eficazmente el óxido, los percebes y otros contaminantes de barcos, yates y diversos equipos marítimos. Nuestro proceso es suave con el material subyacente, lo que lo hace ideal para preservar la integridad de sus valiosos activos marinos mientras restaura su apariencia y funcionalidad."
+    {
+      "title": "Limpieza Eficiente en España",
+      "description": "Nuestra tecnología láser garantiza una limpieza rápida y exhaustiva de todo tipo de superficies en España, eliminando óxido, moho y pintura sin dañar el material en sí."
+    },
+    {
+      "title": "Ecológico en España",
+      "description": "No se utilizan productos químicos en España y se produce un mínimo de residuos durante el proceso."
+    },
+    {
+      "title": "Experiencia Marina en España",
+      "description": "Especializados en la limpieza de barcos y equipos marinos en España."
     }
+  ],
+  "applications": {
+    "title": "Áreas de Aplicación en España",
+    "description": "Nuestra tecnología de limpieza láser es adecuada para una amplia gama de aplicaciones en España, incluyendo equipos marinos y náuticos:",
+    "items": [
+      "Residencial: Vallas, puertas y estructuras metálicas en España",
+      "Comercial: Equipos industriales y maquinaria en España",
+      "Sitios culturales: Monumentos y artefactos metálicos históricos en España",
+      "Marino: Barcos, yates y equipos marítimos en España",
+      "Náutico: Anclas, hélices y otras partes de barcos en España",
+      "Muelles y marinas: Estructuras metálicas expuestas al agua salada en España"
+    ]
   },
+  "marineCleaning": {
+    "title": "Limpieza Láser Marina en España",
+    "description": "Nuestro servicio especializado de limpieza láser es perfecto para la industria marina en España. Podemos eliminar eficazmente el óxido, los percebes y otros contaminantes de barcos, yates y diversos equipos marítimos en España. Nuestro proceso es suave con el material subyacente, lo que lo hace ideal para preservar la integridad de sus valiosos activos marinos mientras restaura su apariencia y funcionalidad."
+  }
+},
 
   "services": {
     "title": "Nuestros Servicios",

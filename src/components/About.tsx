@@ -90,34 +90,58 @@ export default function About() {
               </li>
             ))}
           </ul>
-          {window.innerWidth > 768 ? (
+          {window.innerWidth > 1024 ? (
             <motion.div
               initial={{ opacity: 0, x: 60 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="w-[300px] h-auto absolute top-0 right-0 z-50 ov"
-              style={{ overflow: 'hidden' }}
+              className="overflow-hidden absolute top-0 left-0 right-0 bottom-0"
             >
+              <motion.img
+                src="/images/men-work.webp"
+                alt={t('about.carImage.alt')}
+                className="rounded-lg w-64 h-auto absolute top-0 left-0 z-30"
+                initial={{ x: '-100%' }}
+                whileInView={{ x: '0%' }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              />
               <motion.img
                 src="/images/car.webp"
                 alt={t('about.carImage.alt')}
-                className="rounded-lg"
+                className="rounded-lg w-72 h-auto absolute bottom-0 right-0 z-30"
                 initial={{ x: '100%' }}
                 whileInView={{ x: '0%' }}
-                transition={{ duration: 0.8, delay: 0.6 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
               />
             </motion.div>
           ) : (
             <motion.div
-              initial={{ x: '100%' }}
-              whileInView={{ x: '0%' }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="mt-8"
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="mt-4 flex items-end justify-between gap-1"
             >
-              <img
+              <motion.img
+                src="/images/men-work.webp"
+                alt={t('about.carImage.alt')}
+                className="w-1/3 h-auto"
+                initial={{ x: '-100%' }}
+                whileInView={{ x: '0%' }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.6,
+                  ease: 'easeOut',
+                }}
+              />
+              <motion.img
                 src="/images/car.webp"
                 alt={t('about.carImage.alt')}
-                className="rounded-lg w-full h-auto"
+                className="w-1/2 h-auto"
+                initial={{ x: '100%' }}
+                whileInView={{ x: '0%' }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.6,
+                  ease: 'easeOut',
+                }}
               />
             </motion.div>
           )}

@@ -13,43 +13,43 @@
     "description": "Fast, effective, and eco-friendly laser cleaning of all types of metal, stone, and wood surfaces.",
     "button": "Order Service"
   },
-  "about": {
-    "title": "About Our Service",
-    "benefits": [
-      {
-        "title": "Mobile Service",
-        "description": "We come to you, no need for disassembly or transport."
-      },
-      {
-        "title": "Efficient Cleaning",
-        "description": "Our laser technology ensures fast and thorough cleaning of all types of surfaces, removing rust, mold, and paint without damaging the material itself."
-      },
-      {
-        "title": "Eco-Friendly",
-        "description": "No chemicals used, minimal waste produced during the process."
-      },
-      {
-        "title": "Marine Expertise",
-        "description": "Specialized in cleaning boats and marine equipment."
-      }
-    ],
-    "applications": {
-      "title": "Areas of Application",
-      "description": "Our laser cleaning technology is suitable for a wide range of applications, including marine and nautical equipment:",
-      "items": [
-        "Residential: Fences, gates, and metal structures",
-        "Commercial: Industrial equipment and machinery",
-        "Cultural sites: Monuments and historical metal artifacts",
-        "Marine: Boats, yachts, and maritime equipment",
-        "Nautical: Anchors, propellers, and other boat parts",
-        "Docks and Marinas: Metal structures exposed to saltwater"
-      ]
+"about": {
+  "title": "About Our Laser Cleaning Service in Spain",
+  "benefits": [
+    {
+      "title": "Mobile Service in Spain",
+      "description": "We come to you in Spain, no need for disassembly or transport."
     },
-    "marineCleaning": {
-      "title": "Marine Laser Cleaning",
-      "description": "Our specialized laser cleaning service is perfect for the marine industry. We can effectively remove rust, barnacles, and other contaminants from boats, yachts, and various maritime equipment. Our process is gentle on the underlying material, making it ideal for preserving the integrity of your valuable marine assets while restoring their appearance and functionality."
+    {
+      "title": "Efficient Cleaning in Spain",
+      "description": "Our laser technology ensures fast and thorough cleaning of all types of surfaces in Spain, removing rust, mold, and paint without damaging the material itself."
+    },
+    {
+      "title": "Eco-Friendly in Spain",
+      "description": "No chemicals used in Spain, minimal waste produced during the process."
+    },
+    {
+      "title": "Marine Expertise in Spain",
+      "description": "Specialized in cleaning boats and marine equipment in Spain."
     }
+  ],
+  "applications": {
+    "title": "Areas of Application in Spain",
+    "description": "Our laser cleaning technology is suitable for a wide range of applications in Spain, including marine and nautical equipment:",
+    "items": [
+      "Residential: Fences, gates, and metal structures in Spain",
+      "Commercial: Industrial equipment and machinery in Spain",
+      "Cultural sites: Monuments and historical metal artifacts in Spain",
+      "Marine: Boats, yachts, and maritime equipment in Spain",
+      "Nautical: Anchors, propellers, and other boat parts in Spain",
+      "Docks and Marinas: Metal structures exposed to saltwater in Spain"
+    ]
   },
+  "marineCleaning": {
+    "title": "Marine Laser Cleaning in Spain",
+    "description": "Our specialized laser cleaning service is perfect for the marine industry in Spain. We can effectively remove rust, barnacles, and other contaminants from boats, yachts, and various maritime equipment in Spain. Our process is gentle on the underlying material, making it ideal for preserving the integrity of your valuable marine assets while restoring their appearance and functionality."
+  }
+},
   "services": {
     "title": "Our Services",
     "zap": {

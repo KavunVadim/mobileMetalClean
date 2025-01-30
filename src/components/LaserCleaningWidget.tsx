@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { Mail, Phone, Zap, X } from 'lucide-react';
+import { Mail, Phone, Zap, Plus } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next'; // Додано i18next для багатомовності
 
@@ -104,7 +104,7 @@ const LaserCleaningWidget = () => {
             animate={{ rotate: isOpen ? 45 : 0 }}
             transition={{ duration: 0.3 }}
           >
-            {isOpen ? <X size={30} /> : <Zap size={30} />}
+            {isOpen ? <Plus size={30} /> : <Zap size={30} />}
           </motion.div>
         </motion.button>
       </motion.div>
