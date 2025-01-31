@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
+import { getInitialReviews } from '../data/getInitialReviews';
 
 interface Review {
   id: number;
@@ -9,60 +10,25 @@ interface Review {
   createdAt: string;
 }
 
-const getInitialReviews = (): Review[] => [
-  {
-    id: 1,
-    name: 'Javier Martín',
-    rating: 5,
-    comment:
-      'Limpieza de fachada impecable: Increíble trabajo eliminando la pintura vieja de la fachada de mi local. Todo el proceso fue rápido y sin dañar la pared. ¡Totalmente recomendado!',
-    createdAt: '2024-08-15T10:30:00Z',
-  },
-  {
-    id: 2,
-    name: 'Carlos Rodríguez',
-    rating: 5,
-    comment:
-      'Restauración de barco perfecta: Mi velero tenía óxido y pintura deteriorada, pero después del servicio de Eco Laser Clean quedó como nuevo. ¡Gran profesionalismo y rapidez!',
-    createdAt: '2024-05-14T14:45:00Z',
-  },
-  {
-    id: 3,
-    name: 'Marta López',
-    rating: 5,
-    comment:
-      'Eliminación de óxido con láser: Llamé para eliminar grafitis en la persiana de mi negocio y en menos de una hora estaba impecable. Atención rápida y un equipo muy amable.',
-    createdAt: '2024-07-13T09:15:00Z',
-  },
-  {
-    id: 4,
-    name: 'Laura Fernández',
-    rating: 5,
-    comment:
-      'Servicio rápido y eficiente: Llamé para eliminar grafitis en la persiana de mi negocio y en menos de una hora estaba impecable. Atención rápida y un equipo muy amable.',
-    createdAt: '2024-02-12T16:20:00Z',
-  },
-];
-
 const ReviewCard = ({ review }: { review: Review }) => {
   if (!review) return null;
 
   return (
-    <div className="bg-gray-900 rounded-lg p-6 shadow-lg transition-all duration-300 transform hover:scale-105 max-h-[280px] overflow-auto">
+    <div className="bg-white rounded-lg p-6 shadow-lg transition-all duration-300 transform hover:scale-105 max-h-[280px] overflow-auto border border-gray-200">
       <div className="flex items-center mb-4">
-        <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mr-4">
-          <span className="text-2xl text-gray-300">
+        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+          <span className="text-2xl text-blue-600">
             {review.name.charAt(0)}
           </span>
         </div>
         <div>
-          <h3 className="font-semibold text-lg text-white">{review.name}</h3>
+          <h3 className="font-semibold text-lg text-gray-800">{review.name}</h3>
           <div className="flex">
             {[1, 2, 3, 4, 5].map((star) => (
               <span
                 key={star}
                 className={`text-xl ${
-                  star <= review.rating ? 'text-yellow-400' : 'text-gray-400'
+                  star <= review.rating ? 'text-yellow-400' : 'text-gray-300'
                 }`}
               >
                 ★
@@ -71,8 +37,8 @@ const ReviewCard = ({ review }: { review: Review }) => {
           </div>
         </div>
       </div>
-      <p className="text-gray-300">{review.comment}</p>
-      <p className="text-sm text-gray-400 mt-4">
+      <p className="text-gray-600">{review.comment}</p>
+      <p className="text-sm text-gray-500 mt-4">
         {new Date(review.createdAt).toLocaleDateString()}
       </p>
     </div>
@@ -93,7 +59,7 @@ const Modal = ({
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
       <div
-        className="bg-white rounded-lg p-6 w-full max-w-lg relative"
+        className="bg-white rounded-lg p-6 w-full max-w-lg relative shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
         {children}
@@ -166,31 +132,34 @@ const Reviews = () => {
   };
 
   return (
-    <section id="reviews" className="py-20 bg-gray-800">
+    <section id="reviews" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-white">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-800">
           {t('reviews.title')}
         </h2>
 
-        <div className="mb-8 flex justify-center space-x-4 flex-wrap gap-2">
+        <div className="mb-7 flex justify-center flex-wrap gap-2">
           {[0, 5, 4, 3, 2, 1].map((stars) => (
             <button
               key={stars}
               onClick={() => setFilterRating(stars)}
-              className={`px-4 py-2 rounded ${
+              className={`px-4 py-2 rounded transition-colors flex items-center ${
                 filterRating === stars
                   ? 'bg-blue-600 text-white'
-                  : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                  : 'bg-white text-gray-700 hover:bg-blue-50 border border-gray-200'
               }`}
             >
-              {stars === 0 ? t('reviews.filterAll') : `${stars} ★`}
+              {stars === 0 ? t('reviews.filterAll') : `${stars}`}
+              <span className="text-yellow-400 ml-1">
+                {stars === 0 ? '' : '★'}{' '}
+              </span>
             </button>
           ))}
         </div>
 
         <div className="relative min-h-64">
           {filteredReviews.length === 0 ? (
-            <div className="p-4 text-white text-center">
+            <div className="p-4 text-gray-600 text-center">
               <p>{t('reviews.noReviews')}</p>
             </div>
           ) : (
@@ -201,13 +170,13 @@ const Reviews = () => {
                 <div className="absolute bottom-[-60px] w-full flex justify-center gap-4 px-4">
                   <button
                     onClick={prevSlide}
-                    className="bg-gray-500 hover:bg-gray-700 w-10 h-10 text-white p-2 rounded-full"
+                    className="bg-white hover:bg-blue-600 hover:text-white w-10 h-10 text-gray-700 p-2 rounded-full border border-gray-200 shadow-sm"
                   >
                     ←
                   </button>
                   <button
                     onClick={nextSlide}
-                    className="bg-gray-500 hover:bg-gray-700 w-10 h-10 text-white p-2 rounded-full"
+                    className="bg-white hover:bg-blue-600 hover:text-white w-10 h-10 text-gray-700 p-2 rounded-full border border-gray-200 shadow-sm"
                   >
                     →
                   </button>
@@ -220,7 +189,7 @@ const Reviews = () => {
         <div className="mt-14 max-sm:mt-20 text-center">
           <button
             onClick={() => setShowModal(true)}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors"
           >
             {t('reviews.leaveReview')}
           </button>
@@ -239,7 +208,7 @@ const Reviews = () => {
                   setNewReview({ ...newReview, name: e.target.value })
                 }
                 placeholder={t('reviews.form.namePlaceholder')}
-                className="w-full p-2 border rounded"
+                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
             </div>
@@ -254,10 +223,10 @@ const Reviews = () => {
                     key={star}
                     type="button"
                     onClick={() => setNewReview({ ...newReview, rating: star })}
-                    className={`text-2xl ${
+                    className={`text-2xl transition-colors ${
                       star <= newReview.rating
                         ? 'text-yellow-400'
-                        : 'text-gray-300'
+                        : 'text-gray-300 hover:text-yellow-400'
                     }`}
                   >
                     ★
@@ -276,7 +245,7 @@ const Reviews = () => {
                   setNewReview({ ...newReview, comment: e.target.value })
                 }
                 placeholder={t('reviews.form.commentPlaceholder')}
-                className="w-full p-2 border rounded"
+                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 rows={4}
                 required
               />
@@ -284,7 +253,7 @@ const Reviews = () => {
 
             <button
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded transition-colors"
             >
               {t('reviews.form.submit')}
             </button>

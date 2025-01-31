@@ -84,10 +84,10 @@ const ServiceCard = React.memo(
           )}
 
           <div className="absolute inset-0 bg-black bg-opacity-20 z-20" />
-          <Icon className="w-12 h-12 text-blue-400 absolute top-4 right-4 z-40" />
+          <Icon className="w-12 h-12 text-blue-400 absolute top-4 right-4 z-40 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]" />
         </div>
         <div className="p-6">
-          <h3 className="text-xl font-light mb-2 text-gray-800">{title}</h3>
+          <h3 className="text-xl font-bold mb-2 text-blue-600 ">{title}</h3>
           <p className="text-gray-600">{description}</p>
         </div>
       </motion.div>
@@ -211,7 +211,7 @@ export default function Services() {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl md:text-4xl font-light mb-12 text-center text-gray-800"
+          className="text-4xl md:text-4xl font-bold mb-12 text-center text-gray-800"
         >
           {t('services.title')}
         </motion.h2>

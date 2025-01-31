@@ -14,7 +14,9 @@ interface PortfolioItem {
 
 export default function Portfolio() {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const [currentItem, setCurrentItem] = React.useState<PortfolioItem | null>(null);
+  const [currentItem, setCurrentItem] = React.useState<PortfolioItem | null>(
+    null
+  );
   const { t } = useTranslation();
   const carouselRef = useRef<any>(null); // Реф для керування слайдером
 
@@ -109,7 +111,7 @@ export default function Portfolio() {
   };
 
   return (
-    <section id="portfolio" className="py-20 bg-gray-100">
+    <section id="portfolio" className="py-10 bg-gray-100">
       <div className="container mx-auto px-4">
         <h1 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-800">
           {t('portfolio.title')}
@@ -142,7 +144,11 @@ export default function Portfolio() {
         >
           {portfolioItems.map((project, index) => (
             <div key={project.id} className="px-2">
-              <div className={`group relative animate-scale-in delay-${index * 100}`}>
+              <div
+                className={`group relative animate-scale-in delay-${
+                  index * 100
+                }`}
+              >
                 <div
                   onClick={() => showModal(project)}
                   className="relative h-96 overflow-hidden rounded-xl"
@@ -221,11 +227,15 @@ export default function Portfolio() {
             centered
             width={800}
           >
-            <h3 className="text-xl font-semibold mb-4 text-gray-800">{currentItem?.title}</h3>
+            <h3 className="text-xl font-semibold mb-4 text-gray-800">
+              {currentItem?.title}
+            </h3>
             <p className="text-gray-700 mb-4">{currentItem?.description}</p>
             <div className="grid grid-cols-2 gap-2">
               <div>
-                <h4 className="font-semibold mb-2 text-gray-800">{t('portfolio.before')}</h4>
+                <h4 className="font-semibold mb-2 text-gray-800">
+                  {t('portfolio.before')}
+                </h4>
                 <img
                   src={currentItem?.before}
                   alt={`${t('portfolio.before')} - ${currentItem?.title}`}
@@ -233,7 +243,9 @@ export default function Portfolio() {
                 />
               </div>
               <div>
-                <h4 className="font-semibold mb-2 text-gray-800">{t('portfolio.after')}</h4>
+                <h4 className="font-semibold mb-2 text-gray-800">
+                  {t('portfolio.after')}
+                </h4>
                 <img
                   src={currentItem?.after}
                   alt={`${t('portfolio.after')} - ${currentItem?.title}`}

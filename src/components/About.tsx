@@ -35,13 +35,13 @@ export default function About() {
   }) as string[];
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-10 bg-white">
       <div className="container mx-auto px-4 overflow-hidden">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl md:text-4xl font-light mb-12 text-center text-gray-700"
+          className="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-700"
         >
           {t('about.title')}
         </motion.h2>

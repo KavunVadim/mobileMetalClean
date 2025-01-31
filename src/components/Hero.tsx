@@ -33,7 +33,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-white bg-opacity-50"></div>
 
       {/* Content */}
-      <div className="relative z-10 text-center pb-4 px-2 max-w-4xl mx-auto">
+      <div className="absolute max-sm:top-0 z-10 text-center pb-4 px-2 max-w-4xl mx-auto">
         {/* Logo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -55,18 +55,28 @@ export default function Hero() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl md:text-6xl font-bold text-gray-800 mb-8"
+          className="text-4xl md:text-6xl font-bold font-bruno text-gray-800 mb-4 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
         >
           {t('hero.title')}
-          <span className="block text-blue-600 mt-5">{t('hero.subtitle')}</span>
         </motion.h1>
+
+        {/* Subtitle */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-3xl md:text-5xl font-bold font-bruno text-blue-600 mb-8 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
+        >
+          {t('hero.subtitle')}
+          <span></span>
+        </motion.h2>
 
         {/* Description */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-xl md:text-2xl mb-8 text-gray-600"
+          className="text-xl md:text-2xl mb-8 text-gray-800"
         >
           {t('hero.description')}
         </motion.p>
