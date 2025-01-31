@@ -3,9 +3,10 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { Globe } from 'lucide-react';
+import { Globe, Menu, X } from 'lucide-react';
+import { Button } from 'antd';
 
-// Константи для навігаційних пунктів
+// Constants for navigation items
 const NAV_ITEMS = [
   'Home',
   'About',
@@ -18,25 +19,23 @@ const NAV_ITEMS = [
 export default function Header() {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
-  const [activeItem, setActiveItem] = useState(NAV_ITEMS[0]); // Активний пункт меню
+  const [activeItem, setActiveItem] = useState(NAV_ITEMS[0]);
   const [language, setLanguage] = useState(i18n.language.substring(0, 2));
 
-  const headerRef = useRef(null); // Реф для header
-  const dropdownRef = useRef(null); // Реф для випадаючого меню
+  const headerRef = useRef<HTMLElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Перемикання мови
   const toggleLanguage = useCallback(() => {
-    const currentLanguage = i18n.language.substring(0, 2); // Отримуємо поточну мову
-    const newLang = currentLanguage.startsWith('en') ? 'es' : 'en'; // Визначаємо нову мову
+    const currentLanguage = i18n.language.substring(0, 2);
+    const newLang = currentLanguage.startsWith('en') ? 'es' : 'en';
 
     setLanguage(newLang);
     i18n.changeLanguage(newLang).then(() => {
-      console.log('Мову змінено на:', newLang); // Логування для дебагу
+      console.log('Language changed to:', newLang);
     });
-  }, [i18n, language]);
+  }, [i18n]);
 
-  // Плавна прокрутка до секції з урахуванням висоти header
-  const scrollToSection = useCallback((id) => {
+  const scrollToSection = useCallback((id: string) => {
     if (headerRef.current) {
       const headerHeight = headerRef.current.offsetHeight;
       const section = document.getElementById(id);
@@ -50,20 +49,21 @@ export default function Header() {
     }
   }, []);
 
-  // Обробник кліку на пункт меню
   const handleNavClick = useCallback(
-    (item) => {
+    (item: string) => {
       setActiveItem(item);
-      setIsOpen(false); // Закриваємо мобільне меню
-      scrollToSection(item.toLowerCase()); // Прокрутка до секції
+      setIsOpen(false);
+      scrollToSection(item.toLowerCase());
     },
     [scrollToSection]
   );
 
-  // Закриття меню при кліку поза блоком
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
@@ -72,12 +72,10 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Синхронізація мови з i18n
   useEffect(() => {
     setLanguage(i18n.language.substring(0, 2));
   }, [i18n.language]);
 
-  // Рендер навігаційних пунктів (мемоїзований)
   const navItems = useMemo(
     () =>
       NAV_ITEMS.map((item) => (
@@ -90,13 +88,13 @@ export default function Header() {
           }}
           className={`${
             isOpen
-              ? 'block py-3 px-6 text-2xl text-white hover:bg-gray-700'
-              : 'relative text-gray-300 hover:text-[#b09a0b]'
+              ? 'block py-3 px-6 text-lg text-gray-800 hover:bg-gray-100'
+              : 'relative text-gray-600 hover:text-blue-600'
           } transition-colors duration-300 ${
             activeItem === item
               ? isOpen
-                ? 'text-[#b09a0b] font-bold'
-                : 'text-[#b09a0b]'
+                ? 'text-blue-600 font-bold'
+                : 'text-blue-600'
               : ''
           }`}
         >
@@ -104,7 +102,7 @@ export default function Header() {
           {!isOpen && activeItem === item && (
             <motion.span
               layoutId="underline"
-              className="absolute left-0 bottom-0 w-full h-0.5 bg-[#b09a0b]"
+              className="absolute left-0 bottom-0 w-full h-0.5 bg-blue-600"
               transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
             />
           )}
@@ -116,65 +114,58 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 w-full z-50 bg-gray-900/95 backdrop-blur-sm shadow-xl"
+      className="sticky top-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-md"
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          {/* Логотип */}
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
           <div className="flex items-center space-x-8">
             <a
               href="#"
-              className="text-white font-bold text-2xl max-sm:text-lg hover:text-green-500 transition-colors duration-300"
+              className="text-gray-800 font-bold text-2xl max-sm:text-lg hover:text-blue-600 transition-colors duration-300"
             >
-              <span className="text-green-500">ECO</span> LASER CLEANING
+              <span className="text-green-600">ECO</span>
+              <span className="text-blue-600">LC</span>
             </a>
-            {/* Навігація для десктопу */}
+            {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-6">{navItems}</nav>
           </div>
 
-          {/* Кнопка зміни мови та мобільне меню */}
-          <div className="flex items-center gap-6">
-            <button
+          {/* Language toggle and mobile menu */}
+          <div className=" h-auto flex items-center gap-3">
+            <Button
+              type="primary"
+              ghost
               onClick={toggleLanguage}
-              className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-300"
-              aria-label="Change language"
+              className="flex items-center"
             >
               <Globe className="w-5 h-5" />
-              <span className="font-medium">
-                {language === 'en' ? 'EN' : 'ES'.toUpperCase()}
+              <span className="font-bold">
+                {language === 'en' ? 'EN' : 'ES'}
               </span>
-            </button>
+            </Button>
 
-            {/* Кнопка мобільного меню */}
+            {/* Mobile menu button */}
             <div className="md:hidden">
-              <button
+              <Button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-white focus:outline-none flex items-center space-x-2"
+                type="primary"
+                ghost
+                className="text-gray-600"
                 aria-label={isOpen ? 'Close menu' : 'Open menu'}
               >
                 {isOpen ? (
-                  <svg className="h-8 w-8 fill-current" viewBox="0 0 24 24">
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
-                    />
-                  </svg>
+                  <X className="h-5 w-5" />
                 ) : (
-                  <svg className="h-8 w-8 fill-current" viewBox="0 0 24 24">
-                    <path
-                      fillRule="evenodd"
-                      d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-                    />
-                  </svg>
+                  <Menu className="h-5 w-5" />
                 )}
-              </button>
+              </Button>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Мобільне меню */}
+      {/* Mobile menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -183,7 +174,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="md:hidden bg-gray-800 py-4"
+            className="md:hidden bg-white py-4 shadow-lg"
           >
             {navItems}
           </motion.div>

@@ -30,33 +30,35 @@ export default function Hero() {
       </div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+      <div className="absolute inset-0 bg-white bg-opacity-50"></div>
 
       {/* Content */}
-      <div className="absolute max-sm:top-0 z-10 text-center pb-4 px-2">
+      <div className="relative z-10 text-center pb-4 px-2 max-w-4xl mx-auto">
         {/* Logo */}
-        <motion.img
-          src="/images/logo.webp"
-          alt="Logo"
-          width={300}
-          height={300}
+        <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
           className="mx-auto mb-2"
-        />
+        >
+          <img
+            src="/images/logo.webp"
+            alt="Logo"
+            width={300}
+            height={300}
+            className="mx-auto"
+          />
+        </motion.div>
 
         {/* Title */}
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl md:text-6xl font-bold text-white mb-8 drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)]"
+          className="text-3xl md:text-6xl font-bold text-gray-800 mb-8"
         >
           {t('hero.title')}
-          <span className="block text-[#b09a0b] mt-5 drop-shadow-[0_2px_2px_rgba(0,0,0,0.9)]">
-            {t('hero.subtitle')}
-          </span>
+          <span className="block text-blue-600 mt-5">{t('hero.subtitle')}</span>
         </motion.h1>
 
         {/* Description */}
@@ -64,22 +66,22 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-xl md:text-2xl mb-8 text-cyan-50 drop-shadow-[0_2px_2px_#b09a0b]"
+          className="text-xl md:text-2xl mb-8 text-gray-600"
         >
           {t('hero.description')}
         </motion.p>
 
         {/* Call to Action Button */}
-<motion.a
-  href="#contact"
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, delay: 0.4 }}
-          className="inline-flex items-center bg-blue-500 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-600 transition-colors"
->
-  {t('hero.button')}
-  <ArrowRight className="ml-2" />
-</motion.a>
+        <motion.a
+          href="#contact"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors shadow-md"
+        >
+          {t('hero.button')}
+          <ArrowRight className="ml-2" />
+        </motion.a>
       </div>
     </section>
   );

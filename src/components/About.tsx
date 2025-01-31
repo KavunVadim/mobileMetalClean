@@ -35,13 +35,13 @@ export default function About() {
   }) as string[];
 
   return (
-    <section id="about" className="py-20 bg-gray-800 ">
-      <div className="container mx-auto px-4 text-white overflow-hidden">
+    <section id="about" className="py-20 bg-white">
+      <div className="container mx-auto px-4 overflow-hidden">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl md:text-4xl font-bold mb-12 text-center"
+          className="text-3xl md:text-4xl font-light mb-12 text-center text-gray-700"
         >
           {t('about.title')}
         </motion.h2>
@@ -52,11 +52,13 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="bg-gray-700 p-6 rounded-lg"
+              className="bg-green-200 bg-gradient-to-t from-blue-300 p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow"
             >
-              <benefit.icon className="w-12 h-12 text-blue-500 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
-              <p className="text-gray-300">{benefit.description}</p>
+              <benefit.icon className="w-10 h-10 text-blue-700 mb-4 mx-auto" />
+              <h3 className="text-xl font-light mb-2 text-center text-gray-800">
+                {benefit.title}
+              </h3>
+              <p className="text-gray-600 text-center">{benefit.description}</p>
             </motion.div>
           ))}
         </div>
@@ -66,14 +68,14 @@ export default function About() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-12 text-center relative"
         >
-          <h3 className="text-2xl font-semibold mb-4 ">
+          <h3 className="text-2xl font-light mb-4 text-gray-800">
             {t('about.applications.title')}
           </h3>
           <ul className="grid md:grid-cols-2 gap-4 text-left max-w-2xl mx-auto">
             {applications.map((app, index) => (
               <li key={index} className="flex items-start">
                 <svg
-                  className="w-6 h-6 text-blue-500 mr-2 mt-1 flex-shrink-0"
+                  className="w-5 h-5 text-blue-700 mr-2 mt-1 flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -86,7 +88,7 @@ export default function About() {
                     d="M5 13l4 4L19 7"
                   ></path>
                 </svg>
-                <span className="text-gray-300">{app}</span>
+                <span className="text-gray-700">{app}</span>
               </li>
             ))}
           </ul>
@@ -122,7 +124,7 @@ export default function About() {
               <motion.img
                 src="/images/men-work.webp"
                 alt={t('about.carImage.alt')}
-                className="w-1/3 h-auto"
+                className="w-1/3 h-auto rounded-lg"
                 initial={{ x: '-100%' }}
                 whileInView={{ x: '0%' }}
                 transition={{
@@ -134,7 +136,7 @@ export default function About() {
               <motion.img
                 src="/images/car.webp"
                 alt={t('about.carImage.alt')}
-                className="w-1/2 h-auto"
+                className="w-1/2 h-auto rounded-lg"
                 initial={{ x: '100%' }}
                 whileInView={{ x: '0%' }}
                 transition={{
@@ -152,10 +154,10 @@ export default function About() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-12 text-center"
         >
-          <h3 className="text-2xl font-semibold mb-4">
+          <h3 className="text-2xl font-light mb-4 text-gray-800">
             {t('about.marineCleaning.title')}
           </h3>
-          <p className="text-gray-300 max-w-2xl mx-auto mb-8">
+          <p className="text-gray-700 max-w-2xl mx-auto mb-8">
             {t('about.marineCleaning.description')}
           </p>
         </motion.div>

@@ -29,7 +29,7 @@ function LoadingSpinner() {
 
 function App() {
   return (
-    <div className="bg-gray-900" role="main">
+    <div className="bg-background text-foreground" role="main">
       <Suspense fallback={<LoadingSpinner />}>
         <Header />
         <Hero />
